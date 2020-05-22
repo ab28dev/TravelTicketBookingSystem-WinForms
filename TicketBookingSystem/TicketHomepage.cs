@@ -23,8 +23,10 @@ namespace TicketBookingSystem
 
         }
 
+        // clears the fields
         public void clear()
         {
+            // clearing by replacing the field with nothing
             comboBox_Source.Text = "";
             comboBox_Destination.Text = "";
 
