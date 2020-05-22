@@ -17,9 +17,26 @@ namespace TicketBookingSystem
             InitializeComponent();
         }
         TicketClass c = new TicketClass();
-        private void label_destination_Click(object sender, EventArgs e)
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        public void clear()
+        {
+            comboBox_Source.Text = "";
+            comboBox_Destination.Text = "";
+        }
+
+        private void button_Search_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_Clear_Click(object sender, EventArgs e)
+        {
+            clear();
         }
     }
 }
