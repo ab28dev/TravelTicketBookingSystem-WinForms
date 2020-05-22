@@ -27,6 +27,7 @@ namespace TicketBookingSystem
         {
             comboBox_Source.Text = "";
             comboBox_Destination.Text = "";
+
         }
 
         private void button_Search_Click(object sender, EventArgs e)
