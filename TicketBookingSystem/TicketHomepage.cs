@@ -17,7 +17,7 @@ namespace TicketBookingSystem
             InitializeComponent();
         }
 
-        private TicketClass c = new TicketClass();
+        TicketClass c = new TicketClass();
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -38,15 +38,15 @@ namespace TicketBookingSystem
             // Get the value from the input field
             c.source = comboBox_Source.Text;
             c.destination = comboBox_Destination.Text;
-            bool source_bus = c.search_source_for_bus(c);
-            if(source_bus == true)
+            bool source_bus = c.search_stations(c);
+            /*if(source_bus == true)
             {
                 MessageBox.Show("True");
             }
             else
             {
                 MessageBox.Show("False");
-            }
+            }*/
         }
 
         private void button_Clear_Click(object sender, EventArgs e)
