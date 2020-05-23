@@ -127,24 +127,26 @@ namespace TicketBookingSystem
         TicketPage ticketPage = new TicketPage();
         private void button_BUS_Click(object sender, EventArgs e)
         {
-            
+            HomePage.type_of_t = "BUS TICKET";
             ticketPage.Show();
             this.Hide();
-            HomePage.type_of_t = "BUS TICKET";
+
         }
 
         private void button_TRAIN_Click(object sender, EventArgs e)
         {
+            HomePage.type_of_t = "TRAIN TICKET";
             ticketPage.Show();
             this.Hide();
-            HomePage.type_of_t = "TRAIN TICKET";
+            
         }
 
         private void button_AIRPLANE_Click(object sender, EventArgs e)
         {
+            HomePage.type_of_t = "AIRPLANE TICKET";
             ticketPage.Show();
             this.Hide();
-            HomePage.type_of_t = "AIRPLANE TICKET";
+
         }
 
         private void button_EMERGENCY_Click(object sender, EventArgs e)
