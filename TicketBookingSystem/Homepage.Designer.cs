@@ -1,6 +1,6 @@
 ﻿namespace TicketBookingSystem
 {
-    partial class TicketHomepage
+    partial class HomePage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TicketHomepage));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
             this.button_Clear = new System.Windows.Forms.Button();
             this.button_Search = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -43,8 +43,10 @@
             this.button_TRAIN = new System.Windows.Forms.Button();
             this.button_AIRPLANE = new System.Windows.Forms.Button();
             this.button_EMERGENCY = new System.Windows.Forms.Button();
+            this.Exit = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Banner)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Exit)).BeginInit();
             this.SuspendLayout();
             // 
             // button_Clear
@@ -245,13 +247,25 @@
             this.button_EMERGENCY.UseVisualStyleBackColor = false;
             this.button_EMERGENCY.Click += new System.EventHandler(this.button_EMERGENCY_Click);
             // 
-            // TicketHomepage
+            // Exit
+            // 
+            this.Exit.Image = ((System.Drawing.Image)(resources.GetObject("Exit.Image")));
+            this.Exit.Location = new System.Drawing.Point(756, 409);
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(44, 43);
+            this.Exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Exit.TabIndex = 7;
+            this.Exit.TabStop = false;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            // 
+            // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TicketBookingSystem.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 449);
+            this.ClientSize = new System.Drawing.Size(800, 451);
+            this.Controls.Add(this.Exit);
             this.Controls.Add(this.button_EMERGENCY);
             this.Controls.Add(this.button_AIRPLANE);
             this.Controls.Add(this.button_TRAIN);
@@ -262,12 +276,14 @@
             this.Controls.Add(this.Banner);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "TicketHomepage";
+            this.Name = "Homepage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.TicketHomepage_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Banner)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Exit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -287,6 +303,7 @@
         private System.Windows.Forms.Button button_TRAIN;
         private System.Windows.Forms.Button button_AIRPLANE;
         private System.Windows.Forms.Button button_EMERGENCY;
+        private System.Windows.Forms.PictureBox Exit;
     }
 }
 

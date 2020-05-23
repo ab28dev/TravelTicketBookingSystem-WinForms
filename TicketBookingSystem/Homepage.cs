@@ -4,25 +4,29 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TicketBookingSystem
 {
-    public partial class TicketHomepage : Form
+    public partial class HomePage : Form
     {
-        public TicketHomepage()
+
+        public HomePage()
         {
             InitializeComponent();
         }
 
         TicketClass c = new TicketClass();
+        
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
+        public static String type_of_t;
 
         // clears the fields
         public void clear()
@@ -39,9 +43,9 @@ namespace TicketBookingSystem
             int air_available_flag = 0;
            
             // Get the value from the input field
-            c.source = comboBox_Source.Text;
-            c.destination = comboBox_Destination.Text;
-            if(c.source == c.destination)
+            TicketClass.source = comboBox_Source.Text;
+            TicketClass.destination = comboBox_Destination.Text;
+            if(TicketClass.source == TicketClass.destination)
             {
                 MessageBox.Show("Source and Destination can't be same. Try Again !!!");
                 clear();
@@ -52,7 +56,6 @@ namespace TicketBookingSystem
 
                 if (success == true)
                 {
-                    MessageBox.Show("True");
                     clear();
                     if(c.bus_flag_source == 1 && c.bus_flag_destination == 1)
                     {
@@ -121,24 +124,39 @@ namespace TicketBookingSystem
 
         }
 
+        TicketPage ticketPage = new TicketPage();
         private void button_BUS_Click(object sender, EventArgs e)
         {
-
+            
+            ticketPage.Show();
+            this.Hide();
+            HomePage.type_of_t = "BUS TICKET";
         }
 
         private void button_TRAIN_Click(object sender, EventArgs e)
         {
-
+            ticketPage.Show();
+            this.Hide();
+            HomePage.type_of_t = "TRAIN TICKET";
         }
 
         private void button_AIRPLANE_Click(object sender, EventArgs e)
         {
-
+            ticketPage.Show();
+            this.Hide();
+            HomePage.type_of_t = "AIRPLANE TICKET";
         }
 
         private void button_EMERGENCY_Click(object sender, EventArgs e)
         {
+            ticketPage.Show();
+            this.Hide();
+        }
 
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            ticketPage.Close();
+            this.Close();
         }
     }
 }

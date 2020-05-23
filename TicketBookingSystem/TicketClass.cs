@@ -12,8 +12,9 @@ namespace TicketBookingSystem
     class TicketClass
     {
 
-        public String source { get; set; }
-        public String destination { get; set;}
+        public static String source { get; set; }
+        public static String destination { get; set; }
+        
         public int bus_flag_source = 0;
         public int bus_flag_destination = 0;
         public int train_flag_source = 0;
@@ -21,6 +22,8 @@ namespace TicketBookingSystem
         public int air_flag_source = 0;
         public int air_flag_destination = 0;
 
+        public static int price = 0; 
+        
         static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
         
         // Station checking for bus, train & setting flags for availability
@@ -52,9 +55,9 @@ namespace TicketBookingSystem
                 SqlCommand train_cmd_source = new SqlCommand(train_source, conn);
                 SqlCommand air_cmd_source = new SqlCommand(air_source, conn);
 
-                bus_cmd_source.Parameters.AddWithValue("@source", c.source);
-                train_cmd_source.Parameters.AddWithValue("@source", c.source);
-                air_cmd_source.Parameters.AddWithValue("@source", c.source);
+                bus_cmd_source.Parameters.AddWithValue("@source", TicketClass.source);
+                train_cmd_source.Parameters.AddWithValue("@source", TicketClass.source);
+                air_cmd_source.Parameters.AddWithValue("@source", TicketClass.source);
 
                 SqlDataReader reader = null;
                 
@@ -105,9 +108,9 @@ namespace TicketBookingSystem
                 SqlCommand train_cmd_destination = new SqlCommand(train_destination, conn);
                 SqlCommand air_cmd_destination = new SqlCommand(air_destination, conn);
 
-                bus_cmd_destination.Parameters.AddWithValue("@destination", c.destination);
-                train_cmd_destination.Parameters.AddWithValue("@destination", c.destination);
-                air_cmd_destination.Parameters.AddWithValue("@destination", c.destination);
+                bus_cmd_destination.Parameters.AddWithValue("@destination", TicketClass.destination);
+                train_cmd_destination.Parameters.AddWithValue("@destination", TicketClass.destination);
+                air_cmd_destination.Parameters.AddWithValue("@destination", TicketClass.destination);
 
 
                 // Open Connecction
