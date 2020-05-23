@@ -38,15 +38,26 @@ namespace TicketBookingSystem
             // Get the value from the input field
             c.source = comboBox_Source.Text;
             c.destination = comboBox_Destination.Text;
-            bool source_bus = c.search_stations(c);
-            /*if(source_bus == true)
+            if(c.source == c.destination)
             {
-                MessageBox.Show("True");
+                MessageBox.Show("Source and Destination can't be same. Try Again !!!");
+                clear();
             }
             else
             {
-                MessageBox.Show("False");
-            }*/
+                bool success = c.search_stations(c);
+
+                if (success == true)
+                {
+                    MessageBox.Show("True");
+                    clear();
+
+                }
+                else
+                {
+                    MessageBox.Show("Can not find the information. Try Again Later");
+                }
+            }
         }
 
         private void button_Clear_Click(object sender, EventArgs e)
