@@ -30,11 +30,14 @@ namespace TicketBookingSystem
             // clearing by replacing the field with nothing
             comboBox_Source.Text = "";
             comboBox_Destination.Text = "";
-
         }
 
         private void button_Search_Click(object sender, EventArgs e)
         {
+            int bus_available_flag = 0;
+            int train_available_flag = 0;
+            int air_available_flag = 0;
+           
             // Get the value from the input field
             c.source = comboBox_Source.Text;
             c.destination = comboBox_Destination.Text;
@@ -51,7 +54,42 @@ namespace TicketBookingSystem
                 {
                     MessageBox.Show("True");
                     clear();
+                    if(c.bus_flag_source == 1 && c.bus_flag_destination == 1)
+                    {
+                        // Bus Available
+                        bus_available_flag = 1;
+                        button_BUS.Visible = true;
+                        button_BUS.Enabled = true;
+                    
+                    }
+                    if(c.train_flag_source == 1 && c.train_flag_destination == 1)
+                    {
+                        // Train Available
+                        train_available_flag = 1;
+                        button_TRAIN.Visible = true;
+                        button_TRAIN.Enabled = true;
 
+                    }
+                    if(c.air_flag_source == 1 && c.air_flag_destination ==1)
+                    {
+                        // Airplane Available
+                        air_available_flag = 1;
+                        button_AIRPLANE.Visible = true;
+                        button_AIRPLANE.Enabled = true;
+                    }
+                    else
+                    {
+                        // Emergency Option to be added here
+                        button_EMERGENCY.Visible = true;
+                        button_EMERGENCY.Enabled = true;
+                    }
+
+                    if(bus_available_flag == 0 && train_available_flag == 0 && air_available_flag == 0)
+                    {
+                        // No Direct Mode
+                        // Future Development - Do you want to use multiple mode of Transportation
+
+                    }
                 }
                 else
                 {
@@ -67,10 +105,38 @@ namespace TicketBookingSystem
 
         private void TicketHomepage_Load(object sender, EventArgs e)
         {
+            button_BUS.Enabled = false;
+            button_TRAIN.Enabled = false;
+            button_AIRPLANE.Enabled = false;
+            button_EMERGENCY.Enabled = false;
 
+            button_BUS.Visible = false;
+            button_TRAIN.Visible = false;
+            button_AIRPLANE.Visible = false;
+            button_EMERGENCY.Visible = false;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_BUS_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_TRAIN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_AIRPLANE_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_EMERGENCY_Click(object sender, EventArgs e)
         {
 
         }
