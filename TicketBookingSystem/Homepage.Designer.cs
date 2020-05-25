@@ -43,10 +43,9 @@
             this.button_TRAIN = new System.Windows.Forms.Button();
             this.button_AIRPLANE = new System.Windows.Forms.Button();
             this.button_EMERGENCY = new System.Windows.Forms.Button();
-            this.Exit = new System.Windows.Forms.PictureBox();
+            this.button_CANCEL = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Banner)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Exit)).BeginInit();
             this.SuspendLayout();
             // 
             // button_Clear
@@ -54,9 +53,9 @@
             this.button_Clear.BackColor = System.Drawing.Color.Goldenrod;
             this.button_Clear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_Clear.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Clear.Location = new System.Drawing.Point(566, 139);
+            this.button_Clear.Location = new System.Drawing.Point(563, 124);
             this.button_Clear.Name = "button_Clear";
-            this.button_Clear.Size = new System.Drawing.Size(115, 44);
+            this.button_Clear.Size = new System.Drawing.Size(115, 37);
             this.button_Clear.TabIndex = 3;
             this.button_Clear.Text = "Clear";
             this.button_Clear.UseVisualStyleBackColor = false;
@@ -67,11 +66,11 @@
             this.button_Search.BackColor = System.Drawing.Color.DarkTurquoise;
             this.button_Search.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_Search.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Search.Location = new System.Drawing.Point(566, 203);
+            this.button_Search.Location = new System.Drawing.Point(563, 182);
             this.button_Search.Name = "button_Search";
-            this.button_Search.Size = new System.Drawing.Size(115, 44);
+            this.button_Search.Size = new System.Drawing.Size(115, 39);
             this.button_Search.TabIndex = 4;
-            this.button_Search.Text = "Search]";
+            this.button_Search.Text = "Search";
             this.button_Search.UseVisualStyleBackColor = false;
             this.button_Search.Click += new System.EventHandler(this.button_Search_Click);
             // 
@@ -107,11 +106,13 @@
             // 
             // date_Select
             // 
+            this.date_Select.Cursor = System.Windows.Forms.Cursors.Hand;
             this.date_Select.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.date_Select.Location = new System.Drawing.Point(224, 166);
             this.date_Select.Name = "date_Select";
             this.date_Select.Size = new System.Drawing.Size(242, 31);
             this.date_Select.TabIndex = 4;
+            this.date_Select.ValueChanged += new System.EventHandler(this.date_Select_ValueChanged);
             // 
             // comboBox_Destination
             // 
@@ -247,25 +248,28 @@
             this.button_EMERGENCY.UseVisualStyleBackColor = false;
             this.button_EMERGENCY.Click += new System.EventHandler(this.button_EMERGENCY_Click);
             // 
-            // Exit
+            // button_CANCEL
             // 
-            this.Exit.Image = ((System.Drawing.Image)(resources.GetObject("Exit.Image")));
-            this.Exit.Location = new System.Drawing.Point(756, 409);
-            this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(44, 43);
-            this.Exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Exit.TabIndex = 7;
-            this.Exit.TabStop = false;
-            this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            this.button_CANCEL.BackColor = System.Drawing.Color.IndianRed;
+            this.button_CANCEL.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_CANCEL.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_CANCEL.ForeColor = System.Drawing.Color.Black;
+            this.button_CANCEL.Location = new System.Drawing.Point(563, 238);
+            this.button_CANCEL.Name = "button_CANCEL";
+            this.button_CANCEL.Size = new System.Drawing.Size(115, 37);
+            this.button_CANCEL.TabIndex = 8;
+            this.button_CANCEL.Text = "Cancel";
+            this.button_CANCEL.UseVisualStyleBackColor = false;
+            this.button_CANCEL.Click += new System.EventHandler(this.button_CANCEL_Click);
             // 
-            // Homepage
+            // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TicketBookingSystem.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 451);
-            this.Controls.Add(this.Exit);
+            this.Controls.Add(this.button_CANCEL);
             this.Controls.Add(this.button_EMERGENCY);
             this.Controls.Add(this.button_AIRPLANE);
             this.Controls.Add(this.button_TRAIN);
@@ -276,14 +280,13 @@
             this.Controls.Add(this.Banner);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Homepage";
+            this.Name = "HomePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.TicketHomepage_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Banner)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Exit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -303,7 +306,7 @@
         private System.Windows.Forms.Button button_TRAIN;
         private System.Windows.Forms.Button button_AIRPLANE;
         private System.Windows.Forms.Button button_EMERGENCY;
-        private System.Windows.Forms.PictureBox Exit;
+        private System.Windows.Forms.Button button_CANCEL;
     }
 }
 

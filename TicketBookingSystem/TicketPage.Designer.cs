@@ -46,8 +46,8 @@
             this.label_Route = new System.Windows.Forms.Label();
             this.label_Price = new System.Windows.Forms.Label();
             this.label_TicketNo = new System.Windows.Forms.Label();
-            this.Exit = new System.Windows.Forms.PictureBox();
             this.label_TICKET = new System.Windows.Forms.Label();
+            this.Exit = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Banner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Ticket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Exit)).BeginInit();
@@ -248,17 +248,6 @@
             this.label_TicketNo.TabIndex = 17;
             this.label_TicketNo.Text = "SOME NUMBER";
             // 
-            // Exit
-            // 
-            this.Exit.Image = ((System.Drawing.Image)(resources.GetObject("Exit.Image")));
-            this.Exit.Location = new System.Drawing.Point(756, 408);
-            this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(44, 43);
-            this.Exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Exit.TabIndex = 18;
-            this.Exit.TabStop = false;
-            this.Exit.Click += new System.EventHandler(this.Exit_Click);
-            // 
             // label_TICKET
             // 
             this.label_TICKET.AutoSize = true;
@@ -270,6 +259,17 @@
             this.label_TICKET.Size = new System.Drawing.Size(178, 27);
             this.label_TICKET.TabIndex = 19;
             this.label_TICKET.Text = "EMERGENCY";
+            // 
+            // Exit
+            // 
+            this.Exit.Image = ((System.Drawing.Image)(resources.GetObject("Exit.Image")));
+            this.Exit.Location = new System.Drawing.Point(0, 66);
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(65, 43);
+            this.Exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Exit.TabIndex = 18;
+            this.Exit.TabStop = false;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // TicketPage
             // 
@@ -331,7 +331,7 @@
         private System.Windows.Forms.Label label_Route;
         private System.Windows.Forms.Label label_Price;
         private System.Windows.Forms.Label label_TicketNo;
-        private System.Windows.Forms.PictureBox Exit;
         private System.Windows.Forms.Label label_TICKET;
+        private System.Windows.Forms.PictureBox Exit;
     }
 }

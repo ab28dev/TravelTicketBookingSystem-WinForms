@@ -41,17 +41,14 @@ namespace TicketBookingSystem
         
         private void button_CANCEL_Click(object sender, EventArgs e)
         {
-            HomePage homepage = new HomePage();
-            homepage.Show();
-            this.Hide();
-
+            this.Close();
         }
 
         private void Exit_Click(object sender, EventArgs e)
         {
             HomePage homepage = new HomePage();
-            homepage.Close();
-            this.Close();
+            homepage.Show();
+            this.Hide();
         }
 
         private void button_BOOK_Click(object sender, EventArgs e)
