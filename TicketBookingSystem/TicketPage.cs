@@ -63,5 +63,12 @@ namespace TicketBookingSystem
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            HomePage homepage = new HomePage();
+            homepage.Show();
+            this.Hide();
+        }
     }
 }

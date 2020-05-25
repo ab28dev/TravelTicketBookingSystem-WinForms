@@ -48,9 +48,11 @@
             this.label_TicketNo = new System.Windows.Forms.Label();
             this.label_TICKET = new System.Windows.Forms.Label();
             this.Exit = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Banner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Ticket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Exit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Banner
@@ -263,13 +265,24 @@
             // Exit
             // 
             this.Exit.Image = ((System.Drawing.Image)(resources.GetObject("Exit.Image")));
-            this.Exit.Location = new System.Drawing.Point(0, 66);
+            this.Exit.Location = new System.Drawing.Point(0, 69);
             this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(65, 43);
+            this.Exit.Size = new System.Drawing.Size(44, 43);
             this.Exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Exit.TabIndex = 18;
             this.Exit.TabStop = false;
             this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 112);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(44, 43);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // TicketPage
             // 
@@ -278,6 +291,7 @@
             this.BackgroundImage = global::TicketBookingSystem.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 451);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label_TICKET);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.label_TicketNo);
@@ -307,6 +321,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Banner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Ticket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Exit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,5 +348,6 @@
         private System.Windows.Forms.Label label_TicketNo;
         private System.Windows.Forms.Label label_TICKET;
         private System.Windows.Forms.PictureBox Exit;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
