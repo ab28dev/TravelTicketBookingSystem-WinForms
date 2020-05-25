@@ -35,7 +35,7 @@ namespace TicketBookingSystem
             label_TICKET.Text = HomePage.type_of_t;
             label_Source.Text = TicketClass.source;
             label_Destination.Text = TicketClass.destination;
-
+            label_Date.Text = HomePage.date;
         }
 
         

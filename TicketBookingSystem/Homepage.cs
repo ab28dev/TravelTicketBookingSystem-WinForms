@@ -20,20 +20,40 @@ namespace TicketBookingSystem
         }
 
         TicketClass c = new TicketClass();
-        
+        public static String type_of_t;
+        public static String date;
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
-        public static String type_of_t;
-
+        
         // clears the fields
         public void clear()
         {
             // clearing by replacing the field with nothing
             comboBox_Source.Text = "";
             comboBox_Destination.Text = "";
+            // reset date
+            date_Select.Value = DateTime.Now;
+            
+            //hide the modes if visible
+            if(button_BUS.Visible == true)
+            {
+                button_BUS.Visible = false;
+            }
+            if (button_TRAIN.Visible == true)
+            {
+                button_TRAIN.Visible = false;
+            }
+            if (button_AIRPLANE.Visible == true)
+            {
+                button_AIRPLANE.Visible = false;
+            }
+            if (button_EMERGENCY.Visible == true)
+            {
+                button_EMERGENCY.Visible = false;
+            }
         }
 
         private void button_Search_Click(object sender, EventArgs e)
@@ -41,14 +61,16 @@ namespace TicketBookingSystem
             int bus_available_flag = 0;
             int train_available_flag = 0;
             int air_available_flag = 0;
-           
+
+            // Stores date
+            date = date_Select.Value.ToString("dd-MM-yyyy");
+
             // Get the value from the input field
             TicketClass.source = comboBox_Source.Text;
             TicketClass.destination = comboBox_Destination.Text;
             if(TicketClass.source == TicketClass.destination)
             {
                 MessageBox.Show("Source and Destination can't be same. Try Again !!!");
-                clear();
             }
             else
             {

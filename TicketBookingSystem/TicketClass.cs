@@ -14,7 +14,7 @@ namespace TicketBookingSystem
 
         public static String source { get; set; }
         public static String destination { get; set; }
-        
+
         public int bus_flag_source = 0;
         public int bus_flag_destination = 0;
         public int train_flag_source = 0;
@@ -22,18 +22,47 @@ namespace TicketBookingSystem
         public int air_flag_source = 0;
         public int air_flag_destination = 0;
 
-        public static int price = 0; 
-        
+        public static int price = 0;
+
         static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
+        
+        /*
+        public bool fetch_price(TicketClass c)
+        {
+            bool isSuccess = false;
+            
+            // Connect Database
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            
+            try
+            {
+                String sql;
+                sql = "SELECT ";
+                SqlCommand command = new SqlCommand(sql, conn);
+
+                conn.Open();
+
+
+                isSuccess = true;
+            }
+            catch(Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }*/
         
         // Station checking for bus, train & setting flags for availability
         public bool search_stations(TicketClass c)
         {
-            //c.source = comboBoxSource.Text;
+            
             bool isSuccess = false;
 
             // Connect database
-             SqlConnection conn = new SqlConnection(myconnstrng);
+            SqlConnection conn = new SqlConnection(myconnstrng);
             
             try
             {
@@ -160,6 +189,9 @@ namespace TicketBookingSystem
             }
             return isSuccess;
         }
+
+
+        // Determines ticket Cost
 
     }
 }
