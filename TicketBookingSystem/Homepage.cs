@@ -167,10 +167,13 @@ namespace TicketBookingSystem
         TicketPageAirplane ticketPageAirplane = new TicketPageAirplane();
         TicketPageTrain ticketPageTrain = new TicketPageTrain();
         
-        
+        private void Passanger_details()
+        {
+
+        }
         private void button_BUS_Click(object sender, EventArgs e)
         {
-            
+            Passanger_details();
             ticketPageBus.Show();
             this.Hide();
 
@@ -178,7 +181,7 @@ namespace TicketBookingSystem
 
         private void button_TRAIN_Click(object sender, EventArgs e)
         {
-            
+            Passanger_details();
             ticketPageTrain.Show();
             this.Hide();
             
@@ -186,7 +189,7 @@ namespace TicketBookingSystem
 
         private void button_AIRPLANE_Click(object sender, EventArgs e)
         {
-            
+            Passanger_details();
             ticketPageAirplane.Show();
             this.Hide();
 
@@ -194,6 +197,7 @@ namespace TicketBookingSystem
 
         private void button_EMERGENCY_Click(object sender, EventArgs e)
         {
+            Passanger_details();
             ticketPageEmergency.Show();
             this.Hide();
         }
