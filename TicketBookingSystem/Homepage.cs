@@ -128,6 +128,7 @@ namespace TicketBookingSystem
                     {
                         MessageBox.Show("Can not find the information. Try Again Later");
                     }
+
                 }
 
             }
@@ -169,11 +170,13 @@ namespace TicketBookingSystem
         
         private void Passanger_details()
         {
+            //  future development
 
         }
         private void button_BUS_Click(object sender, EventArgs e)
         {
             Passanger_details();
+            c.fetch_price(c, "BUS");
             ticketPageBus.Show();
             this.Hide();
 
@@ -182,6 +185,7 @@ namespace TicketBookingSystem
         private void button_TRAIN_Click(object sender, EventArgs e)
         {
             Passanger_details();
+            c.fetch_price(c, "TRAIN");
             ticketPageTrain.Show();
             this.Hide();
             
@@ -190,6 +194,7 @@ namespace TicketBookingSystem
         private void button_AIRPLANE_Click(object sender, EventArgs e)
         {
             Passanger_details();
+            c.fetch_price(c, "AIR");
             ticketPageAirplane.Show();
             this.Hide();
 
@@ -198,6 +203,7 @@ namespace TicketBookingSystem
         private void button_EMERGENCY_Click(object sender, EventArgs e)
         {
             Passanger_details();
+            c.fetch_price(c, "EMERGENCY");
             ticketPageEmergency.Show();
             this.Hide();
         }
