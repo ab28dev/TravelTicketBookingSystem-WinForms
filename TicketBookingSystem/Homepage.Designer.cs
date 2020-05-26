@@ -118,6 +118,7 @@
             // 
             this.comboBox_Destination.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBox_Destination.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox_Destination.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.comboBox_Destination.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Destination.FormattingEnabled = true;
             this.comboBox_Destination.Items.AddRange(new object[] {
@@ -154,6 +155,7 @@
             // 
             this.comboBox_Source.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBox_Source.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox_Source.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.comboBox_Source.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Source.FormattingEnabled = true;
             this.comboBox_Source.Items.AddRange(new object[] {

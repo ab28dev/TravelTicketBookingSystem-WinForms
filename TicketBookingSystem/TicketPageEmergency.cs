@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TicketBookingSystem
 {
-    public partial class TicketPage : Form
+    public partial class TicketPageEmergency : Form
     {
-        public TicketPage()
+        public TicketPageEmergency()
         {
             InitializeComponent();
         }
@@ -32,7 +32,6 @@ namespace TicketBookingSystem
         {
             // Feeding ticket particulars
 
-            label_TICKET.Text = HomePage.type_of_t;
             label_Source.Text = TicketClass.source;
             label_Destination.Text = TicketClass.destination;
             label_Date.Text = HomePage.date;

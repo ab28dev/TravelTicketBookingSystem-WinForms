@@ -20,7 +20,6 @@ namespace TicketBookingSystem
         }
 
         TicketClass c = new TicketClass();
-        public static String type_of_t;
         public static String date;
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -163,40 +162,48 @@ namespace TicketBookingSystem
 
         }
 
-        TicketPage ticketPage = new TicketPage();
+        TicketPageEmergency ticketPageEmergency = new TicketPageEmergency();
+        TicketPageBus ticketPageBus = new TicketPageBus();
+        TicketPageAirplane ticketPageAirplane = new TicketPageAirplane();
+        TicketPageTrain ticketPageTrain = new TicketPageTrain();
+        
+        
         private void button_BUS_Click(object sender, EventArgs e)
         {
-            HomePage.type_of_t = "BUS TICKET";
-            ticketPage.Show();
+            
+            ticketPageBus.Show();
             this.Hide();
 
         }
 
         private void button_TRAIN_Click(object sender, EventArgs e)
         {
-            HomePage.type_of_t = "TRAIN TICKET";
-            ticketPage.Show();
+            
+            ticketPageTrain.Show();
             this.Hide();
             
         }
 
         private void button_AIRPLANE_Click(object sender, EventArgs e)
         {
-            HomePage.type_of_t = "AIRPLANE TICKET";
-            ticketPage.Show();
+            
+            ticketPageAirplane.Show();
             this.Hide();
 
         }
 
         private void button_EMERGENCY_Click(object sender, EventArgs e)
         {
-            ticketPage.Show();
+            ticketPageEmergency.Show();
             this.Hide();
         }
 
         private void Exit_Click(object sender, EventArgs e)
         {
-            ticketPage.Close();
+            ticketPageEmergency.Close();
+            ticketPageAirplane.Close();
+            ticketPageBus.Close();
+            ticketPageTrain.Close();
             this.Close();
         }
 

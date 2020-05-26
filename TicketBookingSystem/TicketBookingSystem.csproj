@@ -47,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TicketPage.cs">
+    <Compile Include="TicketPageEmergency.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TicketPage.Designer.cs">
-      <DependentUpon>TicketPage.cs</DependentUpon>
+    <Compile Include="TicketPageEmergency.Designer.cs">
+      <DependentUpon>TicketPageEmergency.cs</DependentUpon>
     </Compile>
     <Compile Include="TicketClass.cs" />
     <Compile Include="HomePage.cs">
@@ -62,8 +62,32 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="TicketPage.resx">
-      <DependentUpon>TicketPage.cs</DependentUpon>
+    <Compile Include="TicketPageAirplane.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TicketPageAirplane.Designer.cs">
+      <DependentUpon>TicketPageAirplane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TicketPageBus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TicketPageBus.Designer.cs">
+      <DependentUpon>TicketPageBus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TicketPageTrain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TicketPageTrain.Designer.cs">
+      <DependentUpon>TicketPageTrain.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="TicketPageAirplane.resx">
+      <DependentUpon>TicketPageAirplane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TicketPageBus.resx">
+      <DependentUpon>TicketPageBus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TicketPageEmergency.resx">
+      <DependentUpon>TicketPageEmergency.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
@@ -78,6 +102,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TicketPageTrain.resx">
+      <DependentUpon>TicketPageTrain.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

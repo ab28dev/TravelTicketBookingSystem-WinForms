@@ -1,6 +1,6 @@
 ﻿namespace TicketBookingSystem
 {
-    partial class TicketPage
+    partial class TicketPageEmergency
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TicketPage));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TicketPageEmergency));
             this.Banner = new System.Windows.Forms.PictureBox();
             this.pictureBox_Ticket = new System.Windows.Forms.PictureBox();
             this.button_BOOK = new System.Windows.Forms.Button();
@@ -47,12 +47,12 @@
             this.label_Price = new System.Windows.Forms.Label();
             this.label_TicketNo = new System.Windows.Forms.Label();
             this.label_TICKET = new System.Windows.Forms.Label();
-            this.Exit = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BackButton = new System.Windows.Forms.PictureBox();
+            this.HomeButton = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Banner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Ticket)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Exit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BackButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HomeButton)).BeginInit();
             this.SuspendLayout();
             // 
             // Banner
@@ -262,38 +262,38 @@
             this.label_TICKET.TabIndex = 19;
             this.label_TICKET.Text = "EMERGENCY";
             // 
-            // Exit
+            // BackButton
             // 
-            this.Exit.Image = ((System.Drawing.Image)(resources.GetObject("Exit.Image")));
-            this.Exit.Location = new System.Drawing.Point(0, 69);
-            this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(44, 43);
-            this.Exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Exit.TabIndex = 18;
-            this.Exit.TabStop = false;
-            this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            this.BackButton.Image = ((System.Drawing.Image)(resources.GetObject("BackButton.Image")));
+            this.BackButton.Location = new System.Drawing.Point(0, 69);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(44, 43);
+            this.BackButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BackButton.TabIndex = 18;
+            this.BackButton.TabStop = false;
+            this.BackButton.Click += new System.EventHandler(this.Exit_Click);
             // 
-            // pictureBox1
+            // HomeButton
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 112);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(44, 43);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.HomeButton.Image = ((System.Drawing.Image)(resources.GetObject("HomeButton.Image")));
+            this.HomeButton.Location = new System.Drawing.Point(0, 112);
+            this.HomeButton.Name = "HomeButton";
+            this.HomeButton.Size = new System.Drawing.Size(44, 43);
+            this.HomeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.HomeButton.TabIndex = 20;
+            this.HomeButton.TabStop = false;
+            this.HomeButton.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // TicketPage
+            // TicketPageEmergency
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TicketBookingSystem.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 451);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.HomeButton);
             this.Controls.Add(this.label_TICKET);
-            this.Controls.Add(this.Exit);
+            this.Controls.Add(this.BackButton);
             this.Controls.Add(this.label_TicketNo);
             this.Controls.Add(this.label_Price);
             this.Controls.Add(this.label_Route);
@@ -314,14 +314,14 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "TicketPage";
+            this.Name = "TicketPageEmergency";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SearchResult";
             this.Load += new System.EventHandler(this.TicketPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Banner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Ticket)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Exit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BackButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HomeButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,7 +347,7 @@
         private System.Windows.Forms.Label label_Price;
         private System.Windows.Forms.Label label_TicketNo;
         private System.Windows.Forms.Label label_TICKET;
-        private System.Windows.Forms.PictureBox Exit;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox BackButton;
+        private System.Windows.Forms.PictureBox HomeButton;
     }
 }
