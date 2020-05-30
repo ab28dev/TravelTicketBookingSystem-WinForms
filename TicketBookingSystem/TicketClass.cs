@@ -162,7 +162,7 @@ namespace TicketBookingSystem
                 SqlCommand bus_cmd_destination = new SqlCommand(bus_destination, conn);
                 SqlCommand train_cmd_destination = new SqlCommand(train_destination, conn);
                 SqlCommand air_cmd_destination = new SqlCommand(air_destination, conn);
-                SqlCommand distance_cmd_destination = new SqlCommand(distance_source, conn);
+                SqlCommand distance_cmd_destination = new SqlCommand(distance_destination, conn);
 
                 bus_cmd_destination.Parameters.AddWithValue("@destination", TicketClass.destination);
                 train_cmd_destination.Parameters.AddWithValue("@destination", TicketClass.destination);
@@ -256,7 +256,7 @@ namespace TicketBookingSystem
 
                 SqlDataReader reader = null;
 
-                sql = "SELECT AIR TRAIN BUS FROM ticket_price WHERE Distance >= @distance";
+                sql = "SELECT AIR, TRAIN, BUS FROM ticket_price WHERE DistanceTill >= @distance";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@distance", TicketClass.distance);
 

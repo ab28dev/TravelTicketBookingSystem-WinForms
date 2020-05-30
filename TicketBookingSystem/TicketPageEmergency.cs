@@ -31,13 +31,15 @@ namespace TicketBookingSystem
         private void TicketPage_Load(object sender, EventArgs e)
         {
             // Feeding ticket particulars
-
+            label_Distance.Text = TicketClass.distance.ToString();
             label_Source.Text = TicketClass.source;
             label_Destination.Text = TicketClass.destination;
             label_Date.Text = HomePage.date;
+            label_Price.Text = TicketClass.price.ToString();
+
         }
 
-        
+
         private void button_CANCEL_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -45,8 +47,8 @@ namespace TicketBookingSystem
 
         private void Exit_Click(object sender, EventArgs e)
         {
-            HomePage homepage = new HomePage();
-            homepage.Show();
+            ReservationTypeEmergency reservationTypeEmergency = new ReservationTypeEmergency();
+            reservationTypeEmergency.Show();
             this.Hide();
         }
 

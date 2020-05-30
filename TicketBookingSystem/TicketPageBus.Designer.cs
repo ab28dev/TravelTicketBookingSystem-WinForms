@@ -49,6 +49,10 @@
             this.BackButton = new System.Windows.Forms.PictureBox();
             this.pictureBox_Ticket = new System.Windows.Forms.PictureBox();
             this.Banner = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label_Distance = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.HomeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Ticket)).BeginInit();
@@ -81,11 +85,11 @@
             // 
             this.label_Price.AutoSize = true;
             this.label_Price.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Price.Location = new System.Drawing.Point(502, 305);
+            this.label_Price.Location = new System.Drawing.Point(625, 305);
             this.label_Price.Name = "label_Price";
-            this.label_Price.Size = new System.Drawing.Size(72, 27);
+            this.label_Price.Size = new System.Drawing.Size(54, 27);
             this.label_Price.TabIndex = 36;
-            this.label_Price.Text = "₹ 000";
+            this.label_Price.Text = "000";
             // 
             // label_Route
             // 
@@ -145,7 +149,7 @@
             this.lbl_Price.BackColor = System.Drawing.Color.White;
             this.lbl_Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Price.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Price.Location = new System.Drawing.Point(514, 285);
+            this.lbl_Price.Location = new System.Drawing.Point(619, 285);
             this.lbl_Price.Name = "lbl_Price";
             this.lbl_Price.Size = new System.Drawing.Size(44, 16);
             this.lbl_Price.TabIndex = 30;
@@ -211,6 +215,7 @@
             this.button_CANCEL.TabIndex = 24;
             this.button_CANCEL.Text = "CANCEL";
             this.button_CANCEL.UseVisualStyleBackColor = false;
+            this.button_CANCEL.Click += new System.EventHandler(this.button_CANCEL_Click);
             // 
             // button_BOOK
             // 
@@ -224,6 +229,7 @@
             this.button_BOOK.TabIndex = 23;
             this.button_BOOK.Text = "BOOK";
             this.button_BOOK.UseVisualStyleBackColor = false;
+            this.button_BOOK.Click += new System.EventHandler(this.button_BOOK_Click);
             // 
             // label_PREVIEW
             // 
@@ -246,6 +252,7 @@
             this.HomeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.HomeButton.TabIndex = 40;
             this.HomeButton.TabStop = false;
+            this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 
             // BackButton
             // 
@@ -256,6 +263,7 @@
             this.BackButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.BackButton.TabIndex = 38;
             this.BackButton.TabStop = false;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // pictureBox_Ticket
             // 
@@ -277,6 +285,48 @@
             this.Banner.TabIndex = 21;
             this.Banner.TabStop = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(472, 305);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 27);
+            this.label4.TabIndex = 43;
+            this.label4.Text = "KM";
+            // 
+            // label_Distance
+            // 
+            this.label_Distance.AutoSize = true;
+            this.label_Distance.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Distance.Location = new System.Drawing.Point(422, 305);
+            this.label_Distance.Name = "label_Distance";
+            this.label_Distance.Size = new System.Drawing.Size(54, 27);
+            this.label_Distance.TabIndex = 42;
+            this.label_Distance.Text = "000";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(435, 285);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 16);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Distance";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(605, 305);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(24, 27);
+            this.label3.TabIndex = 44;
+            this.label3.Text = "₹";
+            // 
             // TicketPageBus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,6 +334,10 @@
             this.BackgroundImage = global::TicketBookingSystem.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label_Distance);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.HomeButton);
             this.Controls.Add(this.label_TICKET);
             this.Controls.Add(this.BackButton);
@@ -307,7 +361,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TicketPageBus";
-            this.Text = "TicketPageBus";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Ticket Booking System";
             this.Load += new System.EventHandler(this.TicketPageBus_Load);
             ((System.ComponentModel.ISupportInitialize)(this.HomeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackButton)).EndInit();
@@ -340,5 +395,9 @@
         private System.Windows.Forms.PictureBox pictureBox_Ticket;
         private System.Windows.Forms.PictureBox Banner;
         private System.Windows.Forms.Label label_PREVIEW;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label_Distance;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
     }
 }

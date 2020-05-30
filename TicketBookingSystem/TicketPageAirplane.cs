@@ -19,11 +19,45 @@ namespace TicketBookingSystem
 
         private void TicketPageAIR_Load(object sender, EventArgs e)
         {
+            // Feeding ticket particulars
+            label_Distance.Text = TicketClass.distance.ToString();
+            label_Source.Text = TicketClass.source;
+            label_Destination.Text = TicketClass.destination;
+            label_Date.Text = HomePage.date;
+            label_Price.Text = TicketClass.price.ToString();
 
         }
 
         private void label_TICKET_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            ReservationTypeAir reservationTypeAir = new ReservationTypeAir();
+            reservationTypeAir.Show();
+            this.Hide();
+        }
+
+        private void HomeButton_Click(object sender, EventArgs e)
+        {
+            HomePage homePage = new HomePage();
+            homePage.Show();
+            this.Hide();
+        }
+
+        private void button_BOOK_Click(object sender, EventArgs e)
+        {
+            HomePage homepage = new HomePage();
+            MessageBox.Show("Your Ticket has been booked successfully.");
+            homepage.Show();
+            this.Hide();
+        }
+
+        private void button_CANCEL_Click(object sender, EventArgs e)
+        {
+            this.Close();
 
         }
     }

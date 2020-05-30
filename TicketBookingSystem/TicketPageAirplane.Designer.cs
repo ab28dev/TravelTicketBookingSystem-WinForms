@@ -32,13 +32,11 @@
             this.label_TICKET = new System.Windows.Forms.Label();
             this.label_TicketNo = new System.Windows.Forms.Label();
             this.label_Price = new System.Windows.Forms.Label();
-            this.label_Route = new System.Windows.Forms.Label();
             this.label_Date = new System.Windows.Forms.Label();
             this.label_Destination = new System.Windows.Forms.Label();
             this.label_Source = new System.Windows.Forms.Label();
             this.lbl_TicketNo = new System.Windows.Forms.Label();
             this.lbl_Price = new System.Windows.Forms.Label();
-            this.lbl_Route = new System.Windows.Forms.Label();
             this.lbl_Date = new System.Windows.Forms.Label();
             this.lbl_Arrive = new System.Windows.Forms.Label();
             this.lbl_Depart = new System.Windows.Forms.Label();
@@ -49,6 +47,10 @@
             this.BackButton = new System.Windows.Forms.PictureBox();
             this.pictureBox_Ticket = new System.Windows.Forms.PictureBox();
             this.Banner = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label_Distance = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.HomeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Ticket)).BeginInit();
@@ -82,21 +84,11 @@
             // 
             this.label_Price.AutoSize = true;
             this.label_Price.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Price.Location = new System.Drawing.Point(502, 305);
+            this.label_Price.Location = new System.Drawing.Point(633, 305);
             this.label_Price.Name = "label_Price";
-            this.label_Price.Size = new System.Drawing.Size(72, 27);
+            this.label_Price.Size = new System.Drawing.Size(54, 27);
             this.label_Price.TabIndex = 36;
-            this.label_Price.Text = "₹ 000";
-            // 
-            // label_Route
-            // 
-            this.label_Route.AutoSize = true;
-            this.label_Route.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Route.Location = new System.Drawing.Point(575, 234);
-            this.label_Route.Name = "label_Route";
-            this.label_Route.Size = new System.Drawing.Size(71, 27);
-            this.label_Route.TabIndex = 35;
-            this.label_Route.Text = "ANY";
+            this.label_Price.Text = "000";
             // 
             // label_Date
             // 
@@ -146,23 +138,11 @@
             this.lbl_Price.BackColor = System.Drawing.Color.White;
             this.lbl_Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Price.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Price.Location = new System.Drawing.Point(514, 285);
+            this.lbl_Price.Location = new System.Drawing.Point(625, 285);
             this.lbl_Price.Name = "lbl_Price";
             this.lbl_Price.Size = new System.Drawing.Size(44, 16);
             this.lbl_Price.TabIndex = 30;
             this.lbl_Price.Text = "Price";
-            // 
-            // lbl_Route
-            // 
-            this.lbl_Route.AutoSize = true;
-            this.lbl_Route.BackColor = System.Drawing.Color.White;
-            this.lbl_Route.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Route.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Route.Location = new System.Drawing.Point(501, 239);
-            this.lbl_Route.Name = "lbl_Route";
-            this.lbl_Route.Size = new System.Drawing.Size(58, 16);
-            this.lbl_Route.TabIndex = 29;
-            this.lbl_Route.Text = "Route -";
             // 
             // lbl_Date
             // 
@@ -212,6 +192,7 @@
             this.button_CANCEL.TabIndex = 24;
             this.button_CANCEL.Text = "CANCEL";
             this.button_CANCEL.UseVisualStyleBackColor = false;
+            this.button_CANCEL.Click += new System.EventHandler(this.button_CANCEL_Click);
             // 
             // button_BOOK
             // 
@@ -225,6 +206,7 @@
             this.button_BOOK.TabIndex = 23;
             this.button_BOOK.Text = "BOOK";
             this.button_BOOK.UseVisualStyleBackColor = false;
+            this.button_BOOK.Click += new System.EventHandler(this.button_BOOK_Click);
             // 
             // label_PREVIEW
             // 
@@ -241,22 +223,24 @@
             // HomeButton
             // 
             this.HomeButton.Image = ((System.Drawing.Image)(resources.GetObject("HomeButton.Image")));
-            this.HomeButton.Location = new System.Drawing.Point(0, 117);
+            this.HomeButton.Location = new System.Drawing.Point(0, 113);
             this.HomeButton.Name = "HomeButton";
             this.HomeButton.Size = new System.Drawing.Size(44, 43);
             this.HomeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.HomeButton.TabIndex = 40;
             this.HomeButton.TabStop = false;
+            this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 
             // BackButton
             // 
             this.BackButton.Image = ((System.Drawing.Image)(resources.GetObject("BackButton.Image")));
-            this.BackButton.Location = new System.Drawing.Point(0, 74);
+            this.BackButton.Location = new System.Drawing.Point(0, 70);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(44, 43);
             this.BackButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.BackButton.TabIndex = 38;
             this.BackButton.TabStop = false;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // pictureBox_Ticket
             // 
@@ -271,12 +255,54 @@
             // Banner
             // 
             this.Banner.Image = ((System.Drawing.Image)(resources.GetObject("Banner.Image")));
-            this.Banner.Location = new System.Drawing.Point(0, 4);
+            this.Banner.Location = new System.Drawing.Point(0, 0);
             this.Banner.Name = "Banner";
             this.Banner.Size = new System.Drawing.Size(800, 70);
             this.Banner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Banner.TabIndex = 21;
             this.Banner.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(433, 285);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 16);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Distance";
+            // 
+            // label_Distance
+            // 
+            this.label_Distance.AutoSize = true;
+            this.label_Distance.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Distance.Location = new System.Drawing.Point(420, 305);
+            this.label_Distance.Name = "label_Distance";
+            this.label_Distance.Size = new System.Drawing.Size(54, 27);
+            this.label_Distance.TabIndex = 36;
+            this.label_Distance.Text = "000";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(609, 305);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(24, 27);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "₹";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(470, 305);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 27);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "KM";
             // 
             // TicketPageAirplane
             // 
@@ -285,18 +311,20 @@
             this.BackgroundImage = global::TicketBookingSystem.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label_Source);
             this.Controls.Add(this.HomeButton);
             this.Controls.Add(this.label_TICKET);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.label_TicketNo);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label_Distance);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label_Price);
-            this.Controls.Add(this.label_Route);
             this.Controls.Add(this.label_Date);
             this.Controls.Add(this.label_Destination);
-            this.Controls.Add(this.label_Source);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_TicketNo);
             this.Controls.Add(this.lbl_Price);
-            this.Controls.Add(this.lbl_Route);
             this.Controls.Add(this.lbl_Date);
             this.Controls.Add(this.lbl_Arrive);
             this.Controls.Add(this.lbl_Depart);
@@ -308,7 +336,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TicketPageAirplane";
-            this.Text = "TicketPageAIR";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Ticket Booking System";
             this.Load += new System.EventHandler(this.TicketPageAIR_Load);
             ((System.ComponentModel.ISupportInitialize)(this.HomeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackButton)).EndInit();
@@ -326,13 +355,11 @@
         private System.Windows.Forms.PictureBox BackButton;
         private System.Windows.Forms.Label label_TicketNo;
         private System.Windows.Forms.Label label_Price;
-        private System.Windows.Forms.Label label_Route;
         private System.Windows.Forms.Label label_Date;
         private System.Windows.Forms.Label label_Destination;
         private System.Windows.Forms.Label label_Source;
         private System.Windows.Forms.Label lbl_TicketNo;
         private System.Windows.Forms.Label lbl_Price;
-        private System.Windows.Forms.Label lbl_Route;
         private System.Windows.Forms.Label lbl_Date;
         private System.Windows.Forms.Label lbl_Arrive;
         private System.Windows.Forms.Label lbl_Depart;
@@ -341,5 +368,9 @@
         private System.Windows.Forms.PictureBox pictureBox_Ticket;
         private System.Windows.Forms.PictureBox Banner;
         private System.Windows.Forms.Label label_PREVIEW;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_Distance;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

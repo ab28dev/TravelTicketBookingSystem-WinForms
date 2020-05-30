@@ -167,44 +167,40 @@ namespace TicketBookingSystem
         TicketPageBus ticketPageBus = new TicketPageBus();
         TicketPageAirplane ticketPageAirplane = new TicketPageAirplane();
         TicketPageTrain ticketPageTrain = new TicketPageTrain();
-        
-        private void Passanger_details()
-        {
-            //  future development
+       
 
-        }
         private void button_BUS_Click(object sender, EventArgs e)
-        {
-            Passanger_details();
+        {            
             c.fetch_price(c, "BUS");
-            ticketPageBus.Show();
+            ReservationTypeBus reservationTypeBus = new ReservationTypeBus();
+            reservationTypeBus.Show();
             this.Hide();
 
         }
 
         private void button_TRAIN_Click(object sender, EventArgs e)
-        {
-            Passanger_details();
+        {            
             c.fetch_price(c, "TRAIN");
-            ticketPageTrain.Show();
+            ReservationTypeTrain reservationTypeTrain = new ReservationTypeTrain();
+            reservationTypeTrain.Show();
             this.Hide();
             
         }
 
         private void button_AIRPLANE_Click(object sender, EventArgs e)
-        {
-            Passanger_details();
+        {            
             c.fetch_price(c, "AIR");
-            ticketPageAirplane.Show();
+            ReservationTypeAir reservationTypeAir = new ReservationTypeAir();
+            reservationTypeAir.Show();
             this.Hide();
 
         }
 
         private void button_EMERGENCY_Click(object sender, EventArgs e)
-        {
-            Passanger_details();
+        {            
             c.fetch_price(c, "EMERGENCY");
-            ticketPageEmergency.Show();
+            ReservationTypeEmergency reservationTypeEmergency = new ReservationTypeEmergency();
+            reservationTypeEmergency.Show();
             this.Hide();
         }
 
