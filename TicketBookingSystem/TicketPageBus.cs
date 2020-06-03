@@ -25,13 +25,13 @@ namespace TicketBookingSystem
             label_Destination.Text = TicketClass.destination;
             label_Date.Text = HomePage.date;
             label_Price.Text = TicketClass.price.ToString();
-
+            label_TicketNo.Text = TicketClass.ticketno.ToString();
         }
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            ReservationTypeBus reservationTypeBus = new ReservationTypeBus();
-            reservationTypeBus.Show();
+            PassangerDetails passanger = new PassangerDetails();
+            passanger.Show();
             this.Hide();
         }
 
@@ -44,6 +44,9 @@ namespace TicketBookingSystem
 
         private void button_BOOK_Click(object sender, EventArgs e)
         {
+            TicketClass ticketClass = new TicketClass();
+            ticketClass.add_ticket(ticketClass, PassangerDetails.str_mode);
+
             HomePage homepage = new HomePage();
             MessageBox.Show("Your Ticket has been booked successfully.");
             homepage.Show();
@@ -52,7 +55,7 @@ namespace TicketBookingSystem
 
         private void button_CANCEL_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
 
         }
     }

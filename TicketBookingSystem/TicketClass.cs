@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,9 @@ namespace TicketBookingSystem
 
         public static String source { get; set; }
         public static String destination { get; set; }
+        public static String mode { get; set; }
+        
+        public static DateTime date { get; set; }
 
         public int bus_flag_source = 0;
         public int bus_flag_destination = 0;
@@ -24,38 +28,11 @@ namespace TicketBookingSystem
 
         public static int price = 0;
         public static int distance = 0;
+        public static int ticketno = 0;
 
         static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
         
-        /*
-        public bool fetch_price(TicketClass c)
-        {
-            bool isSuccess = false;
-            
-            // Connect Database
-            SqlConnection conn = new SqlConnection(myconnstrng);
-            
-            try
-            {
-                String sql;
-                sql = "SELECT DistanceFromFirstStation FROM tbl_stations WHERE StationName = ";
-                SqlCommand command = new SqlCommand(sql, conn);
-
-                conn.Open();
-
-
-                isSuccess = true;
-            }
-            catch(Exception Ex)
-            {
-                MessageBox.Show(Ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-        */
+      
 
         // Station checking for bus, train & setting flags for availability
         public bool search_stations(TicketClass c)
@@ -235,9 +212,54 @@ namespace TicketBookingSystem
             return isSuccess;
         }
 
+        // ticket number from database
+        public bool ticket_no()
+        {
+            bool isSuccess = false;
+            int i = 0;
+            int[] t_no = new int[10];
+            // Connect Database
+            SqlConnection conn = new SqlConnection(myconnstrng);
 
-        // Determines ticket Cost
-        
+            try
+            {
+                String sql;
+
+                SqlDataReader reader = null;
+
+                sql = "SELECT MAX(TicketNo) AS TicketNo FROM ticket_history";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                // Open Connecction
+                conn.Open();
+                // Read the database for flag of bus, train & air
+                reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        // this is how record is read. Loop through the each record
+                        t_no[i] = reader.GetInt32(0);
+                        ++i;
+                        ticketno = t_no[0] + 1;
+                    }
+                }
+                isSuccess = true;
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return isSuccess;
+        }
+
+
+        // Determines ticket Cost 
+
         public bool fetch_price(TicketClass c, String flag_for_mode)
         {
             bool isSuccess = false;
@@ -303,6 +325,74 @@ namespace TicketBookingSystem
 
             return isSuccess;
         }
-        
+
+        public bool add_ticket(TicketClass c, String flag_for_mode)
+        {
+            bool isSuccess = false;
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            
+            try
+            {
+                String sql;
+                sql = "INSERT INTO ticket_history (Source, Destination, Date, Mode, Fare, Distance) VALUES (@Source, @Destination, @date, @Mode, @Fare, @Distance)";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@Source", source);
+                cmd.Parameters.AddWithValue("@Destination", destination);
+                cmd.Parameters.AddWithValue("@Date", date);
+                cmd.Parameters.AddWithValue("@Mode", mode);
+                cmd.Parameters.AddWithValue("@Fare", price);
+                cmd.Parameters.AddWithValue("@Distance", distance);
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+                //if the query runs successfully then the value of rows will be greater than zero else it will be zero
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch(Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+            finally
+            {
+            conn.Close();
+
+            }
+
+            return isSuccess;
+        }
+
+        public DataTable Select()
+        {
+            //step 1: Database connection
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            DataTable dt = new DataTable();
+            try
+            {
+                //step 2: writing sql query
+                string sql = "SELECT TicketNo, Source, Destination, Date AS 'Date of Journey', Mode, Fare, Distance AS 'Distance(KM)' FROM ticket_history";
+                // creating cmd using sql and conn
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                // Creating sql DataAdapter using cmd
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
     }
 }

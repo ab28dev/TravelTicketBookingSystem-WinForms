@@ -47,29 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ReservationTypeEmergency.cs">
+    <Compile Include="PassangerDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReservationTypeEmergency.Designer.cs">
-      <DependentUpon>ReservationTypeEmergency.cs</DependentUpon>
+    <Compile Include="PassangerDetails.Designer.cs">
+      <DependentUpon>PassangerDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReservationTypeAir.cs">
+    <Compile Include="TicketHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReservationTypeAir.Designer.cs">
-      <DependentUpon>ReservationTypeAir.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ReservationTypeBus.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReservationTypeBus.Designer.cs">
-      <DependentUpon>ReservationTypeBus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ReservationTypeTrain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReservationTypeTrain.Designer.cs">
-      <DependentUpon>ReservationTypeTrain.cs</DependentUpon>
+    <Compile Include="TicketHistory.Designer.cs">
+      <DependentUpon>TicketHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="TicketPageEmergency.cs">
       <SubType>Form</SubType>
@@ -104,17 +92,11 @@
     <Compile Include="TicketPageTrain.Designer.cs">
       <DependentUpon>TicketPageTrain.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ReservationTypeAir.resx">
-      <DependentUpon>ReservationTypeAir.cs</DependentUpon>
+    <EmbeddedResource Include="PassangerDetails.resx">
+      <DependentUpon>PassangerDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReservationTypeBus.resx">
-      <DependentUpon>ReservationTypeBus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReservationTypeEmergency.resx">
-      <DependentUpon>ReservationTypeEmergency.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReservationTypeTrain.resx">
-      <DependentUpon>ReservationTypeTrain.cs</DependentUpon>
+    <EmbeddedResource Include="TicketHistory.resx">
+      <DependentUpon>TicketHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TicketPageAirplane.resx">
       <DependentUpon>TicketPageAirplane.cs</DependentUpon>

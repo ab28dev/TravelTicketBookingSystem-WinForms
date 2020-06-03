@@ -72,10 +72,12 @@ namespace TicketBookingSystem
             {
                 // Stores date
                 date = date_Select.Value.ToString("dd-MM-yyyy");
+                TicketClass.date = date_Select.Value;
 
                 // Get the value from the input field
                 TicketClass.source = comboBox_Source.Text;
                 TicketClass.destination = comboBox_Destination.Text;
+
                 if (TicketClass.source == TicketClass.destination)
                 {
                     MessageBox.Show("Source and Destination can't be same. Try Again !!!");
@@ -162,55 +164,51 @@ namespace TicketBookingSystem
         {
 
         }
-
-        TicketPageEmergency ticketPageEmergency = new TicketPageEmergency();
-        TicketPageBus ticketPageBus = new TicketPageBus();
-        TicketPageAirplane ticketPageAirplane = new TicketPageAirplane();
-        TicketPageTrain ticketPageTrain = new TicketPageTrain();
-       
-
+      
+        
         private void button_BUS_Click(object sender, EventArgs e)
-        {            
+        {
+            TicketClass.mode = "BUS";
             c.fetch_price(c, "BUS");
-            ReservationTypeBus reservationTypeBus = new ReservationTypeBus();
-            reservationTypeBus.Show();
+            PassangerDetails passanger = new PassangerDetails();
+            passanger.Show();
             this.Hide();
 
         }
 
         private void button_TRAIN_Click(object sender, EventArgs e)
-        {            
+        {
+            TicketClass.mode = "TRAIN";
             c.fetch_price(c, "TRAIN");
-            ReservationTypeTrain reservationTypeTrain = new ReservationTypeTrain();
-            reservationTypeTrain.Show();
+            PassangerDetails passanger = new PassangerDetails();
+            passanger.Show();
             this.Hide();
             
         }
 
         private void button_AIRPLANE_Click(object sender, EventArgs e)
-        {            
+        {
+            TicketClass.mode = "AIR";
             c.fetch_price(c, "AIR");
-            ReservationTypeAir reservationTypeAir = new ReservationTypeAir();
-            reservationTypeAir.Show();
+            PassangerDetails passanger = new PassangerDetails();
+            passanger.Show();
             this.Hide();
 
         }
 
         private void button_EMERGENCY_Click(object sender, EventArgs e)
-        {            
+        {
+            TicketClass.mode = "EMERGENCY";
             c.fetch_price(c, "EMERGENCY");
-            ReservationTypeEmergency reservationTypeEmergency = new ReservationTypeEmergency();
-            reservationTypeEmergency.Show();
+            PassangerDetails passanger = new PassangerDetails();
+            passanger.Show();
             this.Hide();
         }
 
         private void Exit_Click(object sender, EventArgs e)
         {
-            ticketPageEmergency.Close();
-            ticketPageAirplane.Close();
-            ticketPageBus.Close();
-            ticketPageTrain.Close();
-            this.Close();
+
+            Application.Exit();
         }
 
         private void date_Select_ValueChanged(object sender, EventArgs e)
@@ -220,8 +218,16 @@ namespace TicketBookingSystem
 
         private void button_CANCEL_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
 
+        }
+
+        private void ticket_history_Click(object sender, EventArgs e)
+        {
+            TicketHistory ticketHistory = new TicketHistory();
+            
+            ticketHistory.Show();
+            this.Hide();
         }
     }
 }

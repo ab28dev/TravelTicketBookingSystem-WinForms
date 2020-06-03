@@ -44,6 +44,7 @@
             this.button_AIRPLANE = new System.Windows.Forms.Button();
             this.button_EMERGENCY = new System.Windows.Forms.Button();
             this.button_CANCEL = new System.Windows.Forms.Button();
+            this.ticket_history = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Banner)).BeginInit();
             this.SuspendLayout();
@@ -266,6 +267,19 @@
             this.button_CANCEL.UseVisualStyleBackColor = false;
             this.button_CANCEL.Click += new System.EventHandler(this.button_CANCEL_Click);
             // 
+            // ticket_history
+            // 
+            this.ticket_history.AutoSize = true;
+            this.ticket_history.BackColor = System.Drawing.Color.Teal;
+            this.ticket_history.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ticket_history.ForeColor = System.Drawing.Color.White;
+            this.ticket_history.Location = new System.Drawing.Point(526, 72);
+            this.ticket_history.Name = "ticket_history";
+            this.ticket_history.Size = new System.Drawing.Size(190, 24);
+            this.ticket_history.TabIndex = 9;
+            this.ticket_history.Text = "Tickets History";
+            this.ticket_history.Click += new System.EventHandler(this.ticket_history_Click);
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,6 +287,7 @@
             this.BackgroundImage = global::TicketBookingSystem.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 451);
+            this.Controls.Add(this.ticket_history);
             this.Controls.Add(this.button_CANCEL);
             this.Controls.Add(this.button_EMERGENCY);
             this.Controls.Add(this.button_AIRPLANE);
@@ -292,6 +307,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Banner)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -311,6 +327,7 @@
         private System.Windows.Forms.Button button_AIRPLANE;
         private System.Windows.Forms.Button button_EMERGENCY;
         private System.Windows.Forms.Button button_CANCEL;
+        private System.Windows.Forms.Label ticket_history;
     }
 }
 

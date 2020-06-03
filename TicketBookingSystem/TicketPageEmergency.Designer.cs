@@ -248,11 +248,11 @@
             // 
             this.label_TicketNo.AutoSize = true;
             this.label_TicketNo.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_TicketNo.Location = new System.Drawing.Point(145, 300);
+            this.label_TicketNo.Location = new System.Drawing.Point(203, 300);
             this.label_TicketNo.Name = "label_TicketNo";
-            this.label_TicketNo.Size = new System.Drawing.Size(204, 27);
+            this.label_TicketNo.Size = new System.Drawing.Size(88, 27);
             this.label_TicketNo.TabIndex = 17;
-            this.label_TicketNo.Text = "SOME NUMBER";
+            this.label_TicketNo.Text = "XXXX";
             // 
             // label_TICKET
             // 
@@ -292,7 +292,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(468, 300);
+            this.label4.Location = new System.Drawing.Point(470, 300);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 27);
             this.label4.TabIndex = 39;
@@ -302,7 +302,7 @@
             // 
             this.label_Distance.AutoSize = true;
             this.label_Distance.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Distance.Location = new System.Drawing.Point(418, 300);
+            this.label_Distance.Location = new System.Drawing.Point(408, 300);
             this.label_Distance.Name = "label_Distance";
             this.label_Distance.Size = new System.Drawing.Size(54, 27);
             this.label_Distance.TabIndex = 38;

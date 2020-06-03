@@ -10,15 +10,18 @@ using System.Windows.Forms;
 
 namespace TicketBookingSystem
 {
-    public partial class ReservationTypeBus : Form
+    public partial class TicketHistory : Form
     {
-        public ReservationTypeBus()
+        public TicketHistory()
         {
             InitializeComponent();
         }
+        
+        TicketClass c = new TicketClass();
 
-        private void ReservationTypeBus_Load(object sender, EventArgs e)
+        private void button_CANCEL_Click(object sender, EventArgs e)
         {
+            Application.Exit();
 
         }
 
@@ -36,17 +39,18 @@ namespace TicketBookingSystem
             this.Hide();
         }
 
-        private void button_CANCEL_Click(object sender, EventArgs e)
-        {
-            this.Close();
-
-        }
-
         private void button_BOOK_Click(object sender, EventArgs e)
         {
-            TicketPageBus ticketPageBus = new TicketPageBus();
-            ticketPageBus.Show();
-            this.Hide();
+            // Load data on data grid view
+            DataTable dt = c.Select();
+            dataGridView1.DataSource = dt;
+        }
+
+        private void TicketHistory_Load(object sender, EventArgs e)
+        {
+            // Load data on data grid view
+            DataTable dt = c.Select();
+            dataGridView1.DataSource = dt;
         }
     }
 }
