@@ -17,6 +17,7 @@ namespace TicketBookingSystem
             InitializeComponent();
         }
         public static String str_mode { get; set; }
+        public static int no_of_passangers = 1;
 
         TicketClass c = new TicketClass();
         private void BackButton_Click(object sender, EventArgs e)
@@ -40,21 +41,112 @@ namespace TicketBookingSystem
 
         private void button_BOOK_Click(object sender, EventArgs e)
         {
+            int flag = 0;
             c.ticket_no();
 
             if(textBox_p1_name.Text == "" || textBox_p1_age.Text == "" || comboBox_p1_gender.Text == "" || comboBox_p1_food.Text == "")
             {
                 MessageBox.Show("Please add atleast 1 passanger to continue. No field can be left empty.");
-                
+                flag = 0;
             }
+            if(checkBox_p2.Checked == true)
+            {
+                if (textBox_p2_name.Text == "" || textBox_p2_age.Text == "" || comboBox_p2_gender.Text == "" || comboBox_p2_food.Text == "")
+                {
+                    MessageBox.Show("Please add atleast 1 passanger to continue. No field can be left empty.");
+                    flag = 0;
+                }
+                else
+                {
+                    no_of_passangers++;
+                    flag = 1;
+                }
+            }
+            if(checkBox_p3.Checked == true)
+            {
+                if (textBox_p3_name.Text == "" || textBox_p3_age.Text == "" || comboBox_p3_gender.Text == "" || comboBox_p3_food.Text == "")
+                {
+                    MessageBox.Show("Please add atleast 1 passanger to continue. No field can be left empty.");
+                    flag = 0;
+                }
+                else
+                {
+                    no_of_passangers++;
+                    flag = 1;
+                }
+            }
+            if(checkBox_p4.Checked == true)
+            {
+                if (textBox_p4_name.Text == "" || textBox_p4_age.Text == "" || comboBox_p4_gender.Text == "" || comboBox_p4_food.Text == "")
+                {
+                    MessageBox.Show("Please add atleast 1 passanger to continue. No field can be left empty.");
+                    flag = 0;
+                }
+                else
+                {
+                    no_of_passangers++;
+                    flag = 1;
+                }
+            }
+
             // to be edited
+
+            if (TicketClass.mode == "AIR")
+            {
+                
+                if(class_AIR.Text == "")
+                {
+                    flag = 0;
+                }
+                else
+                {
+                    flag = 1;
+                }
+            }
+            else if (TicketClass.mode == "BUS")
+            {
+                if (class_BUS.Text == "")
+                {
+                    flag = 0;
+                }
+                else
+                {
+                    flag = 1;
+                };
+            }
+            else if (TicketClass.mode == "TRAIN")
+            {
+                if (class_TRAIN.Text == "")
+                {
+                    flag = 0;
+                }
+                else
+                {
+                    flag = 1;
+                }
+            }
             else
+            {
+                if (class_EMERGENCY.Text == "")
+                {
+                    flag = 0;
+                }
+                else
+                {
+                    flag = 1;
+                }
+            }
+
+            if (flag == 0)
+            {
+                MessageBox.Show("Please fill all the details !!!");
+            }
+            else if (flag == 1)
             {
                 TicketPageAirplane ticketPageAirplane = new TicketPageAirplane();
                 ticketPageAirplane.Show();
                 this.Hide();
             }
-
         }
 
         private void textBox_p1_age_KeyPress(object sender, KeyPressEventArgs e)
@@ -89,6 +181,7 @@ namespace TicketBookingSystem
 
         private void ReservationTypeAir_Load(object sender, EventArgs e)
         {
+            
             checkBox_p1.Enabled = true;
             textBox_p1_name.Visible = false;
             textBox_p1_age.Visible = false;
