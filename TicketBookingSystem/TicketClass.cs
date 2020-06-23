@@ -12,7 +12,8 @@ namespace TicketBookingSystem
 {
     class TicketClass
     {
-
+        public static String user_id { get; set; }
+        public static String password { get; set; }
         public static String source { get; set; }
         public static String destination { get; set; }
         public static String mode { get; set; }
@@ -361,7 +362,7 @@ namespace TicketBookingSystem
             }
             finally
             {
-            conn.Close();
+                conn.Close();
 
             }
 
@@ -393,6 +394,76 @@ namespace TicketBookingSystem
                 conn.Close();
             }
             return dt;
+        }
+
+        public bool login_check()
+        {
+            bool issuccess = false;
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            try
+            {
+                String sql = "SELECT Password FROM id_pass WHERE Username = @Username AND Password = @Password";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@Username", user_id);
+                cmd.Parameters.AddWithValue("@Password", password);
+                
+                conn.Open();
+
+                SqlDataReader reader = null;
+                reader = cmd.ExecuteReader();
+                
+                if(reader.HasRows)
+                {
+
+                    issuccess = true;
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+
+            }
+            return issuccess;
+        }
+        public bool login_check_admin()
+        {
+            bool issuccess = false;
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            try
+            {
+                String sql = "SELECT Password FROM id_pass WHERE Username = @Username AND Password = @Password AND Admin = 1";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@Username", user_id);
+                cmd.Parameters.AddWithValue("@Password", password);
+
+                conn.Open();
+
+                SqlDataReader reader = null;
+                reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+
+                    issuccess = true;
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+
+            }
+            return issuccess;
+
         }
     }
 }

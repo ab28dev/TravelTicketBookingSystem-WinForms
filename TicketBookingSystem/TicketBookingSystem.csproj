@@ -53,6 +53,12 @@
     <Compile Include="AdminHomepage.Designer.cs">
       <DependentUpon>AdminHomepage.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminLogin.Designer.cs">
+      <DependentUpon>AdminLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     </Compile>
     <EmbeddedResource Include="AdminHomepage.resx">
       <DependentUpon>AdminHomepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminLogin.resx">
+      <DependentUpon>AdminLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿namespace TicketBookingSystem
 {
-    partial class Login
+    partial class AdminLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,60 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.button_CANCEL = new System.Windows.Forms.Button();
-            this.button_Login = new System.Windows.Forms.Button();
-            this.Banner = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminLogin));
+            this.label_admin_login = new System.Windows.Forms.Label();
+            this.BackButton = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox_Password = new System.Windows.Forms.TextBox();
             this.textBox_Username = new System.Windows.Forms.TextBox();
             this.label_Password = new System.Windows.Forms.Label();
             this.label_Username = new System.Windows.Forms.Label();
-            this.BackButton = new System.Windows.Forms.PictureBox();
-            this.label_admin_login = new System.Windows.Forms.Label();
+            this.button_CANCEL = new System.Windows.Forms.Button();
+            this.button_Login = new System.Windows.Forms.Button();
+            this.Banner = new System.Windows.Forms.PictureBox();
             this.Title = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.Banner)).BeginInit();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BackButton)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Banner)).BeginInit();
             this.SuspendLayout();
             // 
-            // button_CANCEL
+            // label_admin_login
             // 
-            this.button_CANCEL.BackColor = System.Drawing.Color.DarkCyan;
-            this.button_CANCEL.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_CANCEL.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_CANCEL.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button_CANCEL.Location = new System.Drawing.Point(442, 366);
-            this.button_CANCEL.Name = "button_CANCEL";
-            this.button_CANCEL.Size = new System.Drawing.Size(161, 43);
-            this.button_CANCEL.TabIndex = 48;
-            this.button_CANCEL.Text = "CANCEL";
-            this.button_CANCEL.UseVisualStyleBackColor = false;
-            this.button_CANCEL.Click += new System.EventHandler(this.button_CANCEL_Click);
+            this.label_admin_login.AutoSize = true;
+            this.label_admin_login.BackColor = System.Drawing.Color.LightGreen;
+            this.label_admin_login.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_admin_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_admin_login.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label_admin_login.Location = new System.Drawing.Point(346, 315);
+            this.label_admin_login.Name = "label_admin_login";
+            this.label_admin_login.Size = new System.Drawing.Size(118, 27);
+            this.label_admin_login.TabIndex = 57;
+            this.label_admin_login.Text = "User Login";
+            this.label_admin_login.Click += new System.EventHandler(this.label_admin_login_Click);
             // 
-            // button_Login
+            // BackButton
             // 
-            this.button_Login.BackColor = System.Drawing.Color.DarkCyan;
-            this.button_Login.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_Login.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Login.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button_Login.Location = new System.Drawing.Point(208, 366);
-            this.button_Login.Name = "button_Login";
-            this.button_Login.Size = new System.Drawing.Size(161, 43);
-            this.button_Login.TabIndex = 47;
-            this.button_Login.Text = "LOGIN";
-            this.button_Login.UseVisualStyleBackColor = false;
-            this.button_Login.Click += new System.EventHandler(this.button_Login_Click);
-            // 
-            // Banner
-            // 
-            this.Banner.Image = ((System.Drawing.Image)(resources.GetObject("Banner.Image")));
-            this.Banner.Location = new System.Drawing.Point(0, 0);
-            this.Banner.Name = "Banner";
-            this.Banner.Size = new System.Drawing.Size(800, 70);
-            this.Banner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Banner.TabIndex = 46;
-            this.Banner.TabStop = false;
+            this.BackButton.Image = ((System.Drawing.Image)(resources.GetObject("BackButton.Image")));
+            this.BackButton.Location = new System.Drawing.Point(0, 70);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(44, 43);
+            this.BackButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BackButton.TabIndex = 56;
+            this.BackButton.TabStop = false;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // groupBox1
             // 
@@ -96,7 +83,7 @@
             this.groupBox1.Location = new System.Drawing.Point(161, 107);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(472, 191);
-            this.groupBox1.TabIndex = 49;
+            this.groupBox1.TabIndex = 55;
             this.groupBox1.TabStop = false;
             // 
             // textBox_Password
@@ -134,43 +121,56 @@
             this.label_Username.TabIndex = 0;
             this.label_Username.Text = "Username";
             // 
-            // BackButton
+            // button_CANCEL
             // 
-            this.BackButton.Image = ((System.Drawing.Image)(resources.GetObject("BackButton.Image")));
-            this.BackButton.Location = new System.Drawing.Point(0, 70);
-            this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(44, 43);
-            this.BackButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.BackButton.TabIndex = 50;
-            this.BackButton.TabStop = false;
-            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            this.button_CANCEL.BackColor = System.Drawing.Color.DarkCyan;
+            this.button_CANCEL.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_CANCEL.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_CANCEL.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button_CANCEL.Location = new System.Drawing.Point(442, 366);
+            this.button_CANCEL.Name = "button_CANCEL";
+            this.button_CANCEL.Size = new System.Drawing.Size(161, 43);
+            this.button_CANCEL.TabIndex = 54;
+            this.button_CANCEL.Text = "CANCEL";
+            this.button_CANCEL.UseVisualStyleBackColor = false;
+            this.button_CANCEL.Click += new System.EventHandler(this.button_CANCEL_Click);
             // 
-            // label_admin_login
+            // button_Login
             // 
-            this.label_admin_login.AutoSize = true;
-            this.label_admin_login.BackColor = System.Drawing.Color.LightGreen;
-            this.label_admin_login.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label_admin_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_admin_login.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label_admin_login.Location = new System.Drawing.Point(344, 315);
-            this.label_admin_login.Name = "label_admin_login";
-            this.label_admin_login.Size = new System.Drawing.Size(133, 27);
-            this.label_admin_login.TabIndex = 51;
-            this.label_admin_login.Text = "Admin Login";
-            this.label_admin_login.Click += new System.EventHandler(this.label_admin_login_Click);
+            this.button_Login.BackColor = System.Drawing.Color.DarkCyan;
+            this.button_Login.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_Login.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Login.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button_Login.Location = new System.Drawing.Point(208, 366);
+            this.button_Login.Name = "button_Login";
+            this.button_Login.Size = new System.Drawing.Size(161, 43);
+            this.button_Login.TabIndex = 53;
+            this.button_Login.Text = "LOGIN";
+            this.button_Login.UseVisualStyleBackColor = false;
+            this.button_Login.Click += new System.EventHandler(this.button_Login_Click);
+            // 
+            // Banner
+            // 
+            this.Banner.Image = ((System.Drawing.Image)(resources.GetObject("Banner.Image")));
+            this.Banner.Location = new System.Drawing.Point(0, 0);
+            this.Banner.Name = "Banner";
+            this.Banner.Size = new System.Drawing.Size(800, 70);
+            this.Banner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Banner.TabIndex = 52;
+            this.Banner.TabStop = false;
             // 
             // Title
             // 
             this.Title.AutoSize = true;
             this.Title.BackColor = System.Drawing.Color.Transparent;
             this.Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Title.Location = new System.Drawing.Point(311, 70);
+            this.Title.Location = new System.Drawing.Point(302, 70);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(209, 42);
-            this.Title.TabIndex = 5;
-            this.Title.Text = "User Login";
+            this.Title.Size = new System.Drawing.Size(236, 42);
+            this.Title.TabIndex = 58;
+            this.Title.Text = "Admin Login";
             // 
-            // Login
+            // AdminLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -186,14 +186,13 @@
             this.Controls.Add(this.Banner);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Login";
+            this.Name = "AdminLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ticket Booking System";
-            this.Load += new System.EventHandler(this.Login_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Banner)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BackButton)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BackButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Banner)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,16 +200,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button_CANCEL;
-        private System.Windows.Forms.Button button_Login;
-        private System.Windows.Forms.PictureBox Banner;
+        private System.Windows.Forms.Label label_admin_login;
+        private System.Windows.Forms.PictureBox BackButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox_Password;
         private System.Windows.Forms.TextBox textBox_Username;
         private System.Windows.Forms.Label label_Password;
         private System.Windows.Forms.Label label_Username;
-        private System.Windows.Forms.PictureBox BackButton;
-        private System.Windows.Forms.Label label_admin_login;
+        private System.Windows.Forms.Button button_CANCEL;
+        private System.Windows.Forms.Button button_Login;
+        private System.Windows.Forms.PictureBox Banner;
         private System.Windows.Forms.Label Title;
     }
 }
