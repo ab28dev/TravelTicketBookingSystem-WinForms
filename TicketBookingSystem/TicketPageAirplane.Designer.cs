@@ -51,7 +51,7 @@
             this.label_Distance = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label_logout = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.HomeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Ticket)).BeginInit();
@@ -305,19 +305,19 @@
             this.label4.TabIndex = 36;
             this.label4.Text = "KM";
             // 
-            // label2
+            // label_logout
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Firebrick;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(725, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 27);
-            this.label2.TabIndex = 50;
-            this.label2.Text = "Log Out";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label_logout.AutoSize = true;
+            this.label_logout.BackColor = System.Drawing.Color.Firebrick;
+            this.label_logout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_logout.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_logout.ForeColor = System.Drawing.SystemColors.Window;
+            this.label_logout.Location = new System.Drawing.Point(725, 70);
+            this.label_logout.Name = "label_logout";
+            this.label_logout.Size = new System.Drawing.Size(77, 27);
+            this.label_logout.TabIndex = 50;
+            this.label_logout.Text = "Log Out";
+            this.label_logout.Click += new System.EventHandler(this.label2_Click);
             // 
             // TicketPageAirplane
             // 
@@ -326,7 +326,7 @@
             this.BackgroundImage = global::TicketBookingSystem.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label_logout);
             this.Controls.Add(this.label_Source);
             this.Controls.Add(this.HomeButton);
             this.Controls.Add(this.label_TICKET);
@@ -388,6 +388,6 @@
         private System.Windows.Forms.Label label_Distance;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label_logout;
     }
 }

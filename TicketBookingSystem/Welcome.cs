@@ -26,7 +26,9 @@ namespace TicketBookingSystem
 
         private void label_SIGNUP_Click(object sender, EventArgs e)
         {
-
+            Signup signup = new Signup();
+            signup.Show();
+            this.Hide();
         }
 
         private void label_EXIT_Click(object sender, EventArgs e)

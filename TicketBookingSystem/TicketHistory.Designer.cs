@@ -35,7 +35,7 @@
             this.button_CANCEL = new System.Windows.Forms.Button();
             this.button_BOOK = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_logout = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Banner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackButton)).BeginInit();
@@ -116,19 +116,19 @@
             this.dataGridView1.Size = new System.Drawing.Size(757, 279);
             this.dataGridView1.TabIndex = 47;
             // 
-            // label1
+            // label_logout
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Firebrick;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(725, 70);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 27);
-            this.label1.TabIndex = 50;
-            this.label1.Text = "Log Out";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label_logout.AutoSize = true;
+            this.label_logout.BackColor = System.Drawing.Color.Firebrick;
+            this.label_logout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_logout.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_logout.ForeColor = System.Drawing.SystemColors.Window;
+            this.label_logout.Location = new System.Drawing.Point(725, 70);
+            this.label_logout.Name = "label_logout";
+            this.label_logout.Size = new System.Drawing.Size(77, 27);
+            this.label_logout.TabIndex = 50;
+            this.label_logout.Text = "Log Out";
+            this.label_logout.Click += new System.EventHandler(this.label1_Click);
             // 
             // TicketHistory
             // 
@@ -137,7 +137,7 @@
             this.BackgroundImage = global::TicketBookingSystem.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_logout);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.HomeButton);
             this.Controls.Add(this.BackButton);
@@ -167,6 +167,6 @@
         private System.Windows.Forms.Button button_CANCEL;
         private System.Windows.Forms.Button button_BOOK;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_logout;
     }
 }

@@ -69,6 +69,7 @@
             this.button_Login.TabIndex = 47;
             this.button_Login.Text = "LOGIN";
             this.button_Login.UseVisualStyleBackColor = false;
+            this.button_Login.Click += new System.EventHandler(this.button_Login_Click);
             // 
             // Banner
             // 
@@ -102,6 +103,7 @@
             this.textBox_Password.Name = "textBox_Password";
             this.textBox_Password.Size = new System.Drawing.Size(242, 38);
             this.textBox_Password.TabIndex = 4;
+            this.textBox_Password.UseSystemPasswordChar = true;
             // 
             // textBox_Username
             // 
@@ -153,10 +155,12 @@
             this.Controls.Add(this.button_CANCEL);
             this.Controls.Add(this.button_Login);
             this.Controls.Add(this.Banner);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ticket Booking System";
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Banner)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
