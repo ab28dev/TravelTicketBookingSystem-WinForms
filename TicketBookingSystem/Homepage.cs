@@ -222,11 +222,10 @@ namespace TicketBookingSystem
 
         }
 
-        private void ticket_history_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            TicketHistory ticketHistory = new TicketHistory();
-            
-            ticketHistory.Show();
+            Welcome welcome = new Welcome();
+            welcome.Show();
             this.Hide();
         }
     }

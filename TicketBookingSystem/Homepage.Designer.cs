@@ -44,7 +44,7 @@
             this.button_AIRPLANE = new System.Windows.Forms.Button();
             this.button_EMERGENCY = new System.Windows.Forms.Button();
             this.button_CANCEL = new System.Windows.Forms.Button();
-            this.ticket_history = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Banner)).BeginInit();
             this.SuspendLayout();
@@ -78,7 +78,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.BackgroundImage = global::TicketBookingSystem.Properties.Resources.background;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.groupBox1.Controls.Add(this.label_Date);
             this.groupBox1.Controls.Add(this.date_Select);
@@ -267,18 +266,19 @@
             this.button_CANCEL.UseVisualStyleBackColor = false;
             this.button_CANCEL.Click += new System.EventHandler(this.button_CANCEL_Click);
             // 
-            // ticket_history
+            // label1
             // 
-            this.ticket_history.AutoSize = true;
-            this.ticket_history.BackColor = System.Drawing.Color.Teal;
-            this.ticket_history.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ticket_history.ForeColor = System.Drawing.Color.White;
-            this.ticket_history.Location = new System.Drawing.Point(526, 72);
-            this.ticket_history.Name = "ticket_history";
-            this.ticket_history.Size = new System.Drawing.Size(190, 24);
-            this.ticket_history.TabIndex = 9;
-            this.ticket_history.Text = "Tickets History";
-            this.ticket_history.Click += new System.EventHandler(this.ticket_history_Click);
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Firebrick;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Window;
+            this.label1.Location = new System.Drawing.Point(725, 70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 27);
+            this.label1.TabIndex = 50;
+            this.label1.Text = "Log Out";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // HomePage
             // 
@@ -287,7 +287,7 @@
             this.BackgroundImage = global::TicketBookingSystem.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 451);
-            this.Controls.Add(this.ticket_history);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button_CANCEL);
             this.Controls.Add(this.button_EMERGENCY);
             this.Controls.Add(this.button_AIRPLANE);
@@ -327,7 +327,7 @@
         private System.Windows.Forms.Button button_AIRPLANE;
         private System.Windows.Forms.Button button_EMERGENCY;
         private System.Windows.Forms.Button button_CANCEL;
-        private System.Windows.Forms.Label ticket_history;
+        private System.Windows.Forms.Label label1;
     }
 }
 

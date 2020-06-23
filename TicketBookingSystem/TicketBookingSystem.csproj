@@ -65,6 +65,12 @@
     <Compile Include="PassangerDetails.Designer.cs">
       <DependentUpon>PassangerDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Signup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Signup.Designer.cs">
+      <DependentUpon>Signup.cs</DependentUpon>
+    </Compile>
     <Compile Include="TicketHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,12 @@
     <Compile Include="TicketPageTrain.Designer.cs">
       <DependentUpon>TicketPageTrain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Welcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Welcome.Designer.cs">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminHomepage.resx">
       <DependentUpon>AdminHomepage.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PassangerDetails.resx">
       <DependentUpon>PassangerDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Signup.resx">
+      <DependentUpon>Signup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TicketHistory.resx">
       <DependentUpon>TicketHistory.cs</DependentUpon>
@@ -140,6 +155,9 @@
     </Compile>
     <EmbeddedResource Include="TicketPageTrain.resx">
       <DependentUpon>TicketPageTrain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Welcome.resx">
+      <DependentUpon>Welcome.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

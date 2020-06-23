@@ -390,5 +390,12 @@ namespace TicketBookingSystem
                 comboBox_p4_food.Visible = true;
             }
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Welcome welcome = new Welcome();
+            welcome.Show();
+            this.Hide();
+        }
     }
 }

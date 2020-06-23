@@ -74,5 +74,12 @@ namespace TicketBookingSystem
             homepage.Show();
             this.Hide();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Welcome welcome = new Welcome();
+            welcome.Show();
+            this.Hide();
+        }
     }
 }

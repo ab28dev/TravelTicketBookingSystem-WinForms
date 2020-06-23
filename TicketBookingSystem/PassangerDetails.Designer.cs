@@ -65,6 +65,7 @@
             this.class_BUS = new System.Windows.Forms.ComboBox();
             this.class_TRAIN = new System.Windows.Forms.ComboBox();
             this.class_EMERGENCY = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Banner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackButton)).BeginInit();
@@ -206,7 +207,7 @@
             // 
             // groupBox_Details
             // 
-            this.groupBox_Details.BackgroundImage = global::TicketBookingSystem.Properties.Resources.background;
+            this.groupBox_Details.BackColor = System.Drawing.Color.Transparent;
             this.groupBox_Details.Controls.Add(this.comboBox_p4_food);
             this.groupBox_Details.Controls.Add(this.comboBox_p3_food);
             this.groupBox_Details.Controls.Add(this.comboBox_p2_food);
@@ -517,6 +518,20 @@
             this.class_EMERGENCY.Size = new System.Drawing.Size(144, 37);
             this.class_EMERGENCY.TabIndex = 61;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Firebrick;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Window;
+            this.label4.Location = new System.Drawing.Point(724, 70);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 27);
+            this.label4.TabIndex = 62;
+            this.label4.Text = "Log Out";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
             // PassangerDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -524,6 +539,7 @@
             this.BackgroundImage = global::TicketBookingSystem.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.class_EMERGENCY);
             this.Controls.Add(this.class_TRAIN);
             this.Controls.Add(this.class_BUS);
@@ -594,5 +610,6 @@
         private System.Windows.Forms.ComboBox class_BUS;
         private System.Windows.Forms.ComboBox class_TRAIN;
         private System.Windows.Forms.ComboBox class_EMERGENCY;
+        private System.Windows.Forms.Label label4;
     }
 }

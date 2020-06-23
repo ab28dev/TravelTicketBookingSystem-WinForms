@@ -34,8 +34,8 @@ namespace TicketBookingSystem
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            HomePage homePage = new HomePage();
-            homePage.Show();
+            AdminHomepage adminHomepage = new AdminHomepage();
+            adminHomepage.Show();
             this.Hide();
         }
 
@@ -51,6 +51,13 @@ namespace TicketBookingSystem
             // Load data on data grid view
             DataTable dt = c.Select();
             dataGridView1.DataSource = dt;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Welcome welcome = new Welcome();
+            welcome.Show();
+            this.Hide();
         }
     }
 }
