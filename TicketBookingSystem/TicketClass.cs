@@ -17,7 +17,7 @@ namespace TicketBookingSystem
         public static String source { get; set; }
         public static String destination { get; set; }
         public static String mode { get; set; }
-        
+
         public static DateTime date { get; set; }
 
         public int bus_flag_source = 0;
