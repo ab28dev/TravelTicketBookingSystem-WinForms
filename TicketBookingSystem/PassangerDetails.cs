@@ -143,9 +143,30 @@ namespace TicketBookingSystem
             }
             else if (flag == 1)
             {
-                TicketPageAirplane ticketPageAirplane = new TicketPageAirplane();
-                ticketPageAirplane.Show();
-                this.Hide();
+                if (TicketClass.mode == "AIR")
+                {
+                    TicketPageAirplane ticketPageAirplane = new TicketPageAirplane();
+                    ticketPageAirplane.Show();
+                    this.Hide();
+                }
+                else if (TicketClass.mode == "BUS")
+                {
+                    TicketPageBus ticketPageBus = new TicketPageBus();
+                    ticketPageBus.Show();
+                    this.Hide();
+                }
+                else if (TicketClass.mode == "TRAIN")
+                {
+                    TicketPageTrain ticketPageTrain = new TicketPageTrain();
+                    ticketPageTrain.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    TicketPageEmergency ticketPageEmergency = new TicketPageEmergency();
+                    ticketPageEmergency.Show();
+                    this.Hide();
+                }
             }
         }
 
