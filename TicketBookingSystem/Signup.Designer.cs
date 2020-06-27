@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Signup));
             this.BackButton = new System.Windows.Forms.PictureBox();
             this.button_CANCEL = new System.Windows.Forms.Button();
-            this.button_Login = new System.Windows.Forms.Button();
+            this.button_Signup = new System.Windows.Forms.Button();
             this.Banner = new System.Windows.Forms.PictureBox();
             this.Title = new System.Windows.Forms.Label();
             this.label_userid = new System.Windows.Forms.Label();
@@ -81,18 +81,19 @@
             this.button_CANCEL.UseVisualStyleBackColor = false;
             this.button_CANCEL.Click += new System.EventHandler(this.button_CANCEL_Click);
             // 
-            // button_Login
+            // button_Signup
             // 
-            this.button_Login.BackColor = System.Drawing.Color.DarkCyan;
-            this.button_Login.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_Login.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Login.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button_Login.Location = new System.Drawing.Point(208, 399);
-            this.button_Login.Name = "button_Login";
-            this.button_Login.Size = new System.Drawing.Size(161, 43);
-            this.button_Login.TabIndex = 52;
-            this.button_Login.Text = "SIGNUP";
-            this.button_Login.UseVisualStyleBackColor = false;
+            this.button_Signup.BackColor = System.Drawing.Color.DarkCyan;
+            this.button_Signup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_Signup.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Signup.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button_Signup.Location = new System.Drawing.Point(208, 399);
+            this.button_Signup.Name = "button_Signup";
+            this.button_Signup.Size = new System.Drawing.Size(161, 43);
+            this.button_Signup.TabIndex = 52;
+            this.button_Signup.Text = "SIGNUP";
+            this.button_Signup.UseVisualStyleBackColor = false;
+            this.button_Signup.Click += new System.EventHandler(this.button_Signup_Click);
             // 
             // Banner
             // 
@@ -221,6 +222,7 @@
             this.textBox_userid.Name = "textBox_userid";
             this.textBox_userid.Size = new System.Drawing.Size(212, 31);
             this.textBox_userid.TabIndex = 66;
+            this.textBox_userid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_userid_KeyPress);
             // 
             // textBox_password
             // 
@@ -316,7 +318,7 @@
             this.Controls.Add(this.Title);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.button_CANCEL);
-            this.Controls.Add(this.button_Login);
+            this.Controls.Add(this.button_Signup);
             this.Controls.Add(this.Banner);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -334,7 +336,7 @@
 
         private System.Windows.Forms.PictureBox BackButton;
         private System.Windows.Forms.Button button_CANCEL;
-        private System.Windows.Forms.Button button_Login;
+        private System.Windows.Forms.Button button_Signup;
         private System.Windows.Forms.PictureBox Banner;
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.Label label_userid;

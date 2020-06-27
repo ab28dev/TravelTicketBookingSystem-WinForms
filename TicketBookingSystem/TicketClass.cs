@@ -335,7 +335,7 @@ namespace TicketBookingSystem
             try
             {
                 String sql;
-                sql = "INSERT INTO ticket_history (Source, Destination, Date, Mode, Fare, Distance) VALUES (@Source, @Destination, @date, @Mode, @Fare, @Distance)";
+                sql = "INSERT INTO ticket_history (Source, Destination, Date, Mode, Fare, Distance, UserID) VALUES (@Source, @Destination, @date, @Mode, @Fare, @Distance, @UserID)";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@Source", source);
@@ -344,6 +344,7 @@ namespace TicketBookingSystem
                 cmd.Parameters.AddWithValue("@Mode", mode);
                 cmd.Parameters.AddWithValue("@Fare", price);
                 cmd.Parameters.AddWithValue("@Distance", distance);
+                cmd.Parameters.AddWithValue("@UserID", user_id);
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
                 //if the query runs successfully then the value of rows will be greater than zero else it will be zero
