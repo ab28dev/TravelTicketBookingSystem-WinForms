@@ -84,5 +84,10 @@ namespace TicketBookingSystem
         {
             e.Handled = (e.KeyChar == (char)Keys.Space);
         }
+
+        private void textBox_age_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

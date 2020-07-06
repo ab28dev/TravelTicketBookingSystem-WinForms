@@ -32,13 +32,11 @@
             this.label_TICKET = new System.Windows.Forms.Label();
             this.label_TicketNo = new System.Windows.Forms.Label();
             this.label_Price = new System.Windows.Forms.Label();
-            this.label_Route = new System.Windows.Forms.Label();
             this.label_Date = new System.Windows.Forms.Label();
             this.label_Destination = new System.Windows.Forms.Label();
             this.label_Source = new System.Windows.Forms.Label();
             this.lbl_TicketNo = new System.Windows.Forms.Label();
             this.lbl_Price = new System.Windows.Forms.Label();
-            this.lbl_Route = new System.Windows.Forms.Label();
             this.lbl_Date = new System.Windows.Forms.Label();
             this.lbl_Arrive = new System.Windows.Forms.Label();
             this.lbl_Depart = new System.Windows.Forms.Label();
@@ -47,17 +45,30 @@
             this.label_PREVIEW = new System.Windows.Forms.Label();
             this.HomeButton = new System.Windows.Forms.PictureBox();
             this.BackButton = new System.Windows.Forms.PictureBox();
-            this.pictureBox_Ticket = new System.Windows.Forms.PictureBox();
             this.Banner = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label_Distance = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label_logout = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label_Gender4 = new System.Windows.Forms.Label();
+            this.label_Gender3 = new System.Windows.Forms.Label();
+            this.label_Gender2 = new System.Windows.Forms.Label();
+            this.label_Gender1 = new System.Windows.Forms.Label();
+            this.label_Age4 = new System.Windows.Forms.Label();
+            this.label_Age3 = new System.Windows.Forms.Label();
+            this.label_Age2 = new System.Windows.Forms.Label();
+            this.label_Age1 = new System.Windows.Forms.Label();
+            this.label_Name4 = new System.Windows.Forms.Label();
+            this.label_Name3 = new System.Windows.Forms.Label();
+            this.label_Name2 = new System.Windows.Forms.Label();
+            this.label_Name1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.HomeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Ticket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Banner)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label_TICKET
@@ -76,7 +87,7 @@
             // 
             this.label_TicketNo.AutoSize = true;
             this.label_TicketNo.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_TicketNo.Location = new System.Drawing.Point(204, 305);
+            this.label_TicketNo.Location = new System.Drawing.Point(64, 308);
             this.label_TicketNo.Name = "label_TicketNo";
             this.label_TicketNo.Size = new System.Drawing.Size(88, 27);
             this.label_TicketNo.TabIndex = 37;
@@ -86,37 +97,29 @@
             // 
             this.label_Price.AutoSize = true;
             this.label_Price.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Price.Location = new System.Drawing.Point(625, 305);
+            this.label_Price.Location = new System.Drawing.Point(404, 308);
             this.label_Price.Name = "label_Price";
             this.label_Price.Size = new System.Drawing.Size(54, 27);
             this.label_Price.TabIndex = 36;
             this.label_Price.Text = "000";
-            // 
-            // label_Route
-            // 
-            this.label_Route.AutoSize = true;
-            this.label_Route.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Route.Location = new System.Drawing.Point(575, 234);
-            this.label_Route.Name = "label_Route";
-            this.label_Route.Size = new System.Drawing.Size(71, 27);
-            this.label_Route.TabIndex = 35;
-            this.label_Route.Text = "ANY";
+            this.label_Price.Click += new System.EventHandler(this.label_Price_Click);
             // 
             // label_Date
             // 
             this.label_Date.AutoSize = true;
             this.label_Date.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Date.Location = new System.Drawing.Point(575, 200);
+            this.label_Date.Location = new System.Drawing.Point(354, 203);
             this.label_Date.Name = "label_Date";
             this.label_Date.Size = new System.Drawing.Size(136, 27);
             this.label_Date.TabIndex = 34;
             this.label_Date.Text = "DEFAULT";
+            this.label_Date.Click += new System.EventHandler(this.label_Date_Click);
             // 
             // label_Destination
             // 
             this.label_Destination.AutoSize = true;
             this.label_Destination.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Destination.Location = new System.Drawing.Point(207, 234);
+            this.label_Destination.Location = new System.Drawing.Point(67, 237);
             this.label_Destination.Name = "label_Destination";
             this.label_Destination.Size = new System.Drawing.Size(136, 27);
             this.label_Destination.TabIndex = 32;
@@ -126,7 +129,7 @@
             // 
             this.label_Source.AutoSize = true;
             this.label_Source.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Source.Location = new System.Drawing.Point(207, 200);
+            this.label_Source.Location = new System.Drawing.Point(67, 203);
             this.label_Source.Name = "label_Source";
             this.label_Source.Size = new System.Drawing.Size(136, 27);
             this.label_Source.TabIndex = 33;
@@ -138,7 +141,7 @@
             this.lbl_TicketNo.BackColor = System.Drawing.Color.White;
             this.lbl_TicketNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TicketNo.ForeColor = System.Drawing.Color.Black;
-            this.lbl_TicketNo.Location = new System.Drawing.Point(192, 285);
+            this.lbl_TicketNo.Location = new System.Drawing.Point(52, 288);
             this.lbl_TicketNo.Name = "lbl_TicketNo";
             this.lbl_TicketNo.Size = new System.Drawing.Size(109, 16);
             this.lbl_TicketNo.TabIndex = 31;
@@ -150,23 +153,12 @@
             this.lbl_Price.BackColor = System.Drawing.Color.White;
             this.lbl_Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Price.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Price.Location = new System.Drawing.Point(619, 285);
+            this.lbl_Price.Location = new System.Drawing.Point(398, 288);
             this.lbl_Price.Name = "lbl_Price";
             this.lbl_Price.Size = new System.Drawing.Size(44, 16);
             this.lbl_Price.TabIndex = 30;
             this.lbl_Price.Text = "Price";
-            // 
-            // lbl_Route
-            // 
-            this.lbl_Route.AutoSize = true;
-            this.lbl_Route.BackColor = System.Drawing.Color.White;
-            this.lbl_Route.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Route.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Route.Location = new System.Drawing.Point(501, 239);
-            this.lbl_Route.Name = "lbl_Route";
-            this.lbl_Route.Size = new System.Drawing.Size(58, 16);
-            this.lbl_Route.TabIndex = 29;
-            this.lbl_Route.Text = "Route -";
+            this.lbl_Price.Click += new System.EventHandler(this.lbl_Price_Click);
             // 
             // lbl_Date
             // 
@@ -174,11 +166,12 @@
             this.lbl_Date.BackColor = System.Drawing.Color.White;
             this.lbl_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Date.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Date.Location = new System.Drawing.Point(501, 205);
+            this.lbl_Date.Location = new System.Drawing.Point(280, 208);
             this.lbl_Date.Name = "lbl_Date";
             this.lbl_Date.Size = new System.Drawing.Size(50, 16);
             this.lbl_Date.TabIndex = 28;
             this.lbl_Date.Text = "Date -";
+            this.lbl_Date.Click += new System.EventHandler(this.lbl_Date_Click);
             // 
             // lbl_Arrive
             // 
@@ -186,7 +179,7 @@
             this.lbl_Arrive.BackColor = System.Drawing.Color.White;
             this.lbl_Arrive.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Arrive.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Arrive.Location = new System.Drawing.Point(144, 239);
+            this.lbl_Arrive.Location = new System.Drawing.Point(4, 242);
             this.lbl_Arrive.Name = "lbl_Arrive";
             this.lbl_Arrive.Size = new System.Drawing.Size(58, 16);
             this.lbl_Arrive.TabIndex = 27;
@@ -198,7 +191,7 @@
             this.lbl_Depart.BackColor = System.Drawing.Color.White;
             this.lbl_Depart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Depart.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Depart.Location = new System.Drawing.Point(143, 205);
+            this.lbl_Depart.Location = new System.Drawing.Point(3, 208);
             this.lbl_Depart.Name = "lbl_Depart";
             this.lbl_Depart.Size = new System.Drawing.Size(64, 16);
             this.lbl_Depart.TabIndex = 26;
@@ -247,7 +240,7 @@
             // HomeButton
             // 
             this.HomeButton.Image = ((System.Drawing.Image)(resources.GetObject("HomeButton.Image")));
-            this.HomeButton.Location = new System.Drawing.Point(0, 113);
+            this.HomeButton.Location = new System.Drawing.Point(44, 71);
             this.HomeButton.Name = "HomeButton";
             this.HomeButton.Size = new System.Drawing.Size(44, 43);
             this.HomeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -266,16 +259,6 @@
             this.BackButton.TabStop = false;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
-            // pictureBox_Ticket
-            // 
-            this.pictureBox_Ticket.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Ticket.Image")));
-            this.pictureBox_Ticket.Location = new System.Drawing.Point(86, 112);
-            this.pictureBox_Ticket.Name = "pictureBox_Ticket";
-            this.pictureBox_Ticket.Size = new System.Drawing.Size(637, 282);
-            this.pictureBox_Ticket.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox_Ticket.TabIndex = 22;
-            this.pictureBox_Ticket.TabStop = false;
-            // 
             // Banner
             // 
             this.Banner.Image = ((System.Drawing.Image)(resources.GetObject("Banner.Image")));
@@ -290,21 +273,23 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(475, 305);
+            this.label4.Location = new System.Drawing.Point(279, 308);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 27);
             this.label4.TabIndex = 43;
             this.label4.Text = "KM";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label_Distance
             // 
             this.label_Distance.AutoSize = true;
             this.label_Distance.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Distance.Location = new System.Drawing.Point(416, 305);
+            this.label_Distance.Location = new System.Drawing.Point(220, 308);
             this.label_Distance.Name = "label_Distance";
             this.label_Distance.Size = new System.Drawing.Size(54, 27);
             this.label_Distance.TabIndex = 42;
             this.label_Distance.Text = "000";
+            this.label_Distance.Click += new System.EventHandler(this.label_Distance_Click);
             // 
             // label1
             // 
@@ -312,21 +297,23 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(435, 285);
+            this.label1.Location = new System.Drawing.Point(239, 288);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 16);
             this.label1.TabIndex = 41;
             this.label1.Text = "Distance";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(605, 305);
+            this.label3.Location = new System.Drawing.Point(384, 308);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(24, 27);
             this.label3.TabIndex = 44;
             this.label3.Text = "₹";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label_logout
             // 
@@ -342,6 +329,174 @@
             this.label_logout.Text = "Log Out";
             this.label_logout.Click += new System.EventHandler(this.label2_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(596, 167);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(108, 24);
+            this.label7.TabIndex = 60;
+            this.label7.Text = "Passangers";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 113);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(800, 286);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 59;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // label_Gender4
+            // 
+            this.label_Gender4.AutoSize = true;
+            this.label_Gender4.BackColor = System.Drawing.Color.White;
+            this.label_Gender4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Gender4.ForeColor = System.Drawing.Color.Black;
+            this.label_Gender4.Location = new System.Drawing.Point(774, 319);
+            this.label_Gender4.Name = "label_Gender4";
+            this.label_Gender4.Size = new System.Drawing.Size(20, 16);
+            this.label_Gender4.TabIndex = 84;
+            this.label_Gender4.Text = "M";
+            // 
+            // label_Gender3
+            // 
+            this.label_Gender3.AutoSize = true;
+            this.label_Gender3.BackColor = System.Drawing.Color.White;
+            this.label_Gender3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Gender3.ForeColor = System.Drawing.Color.Black;
+            this.label_Gender3.Location = new System.Drawing.Point(774, 288);
+            this.label_Gender3.Name = "label_Gender3";
+            this.label_Gender3.Size = new System.Drawing.Size(20, 16);
+            this.label_Gender3.TabIndex = 83;
+            this.label_Gender3.Text = "M";
+            // 
+            // label_Gender2
+            // 
+            this.label_Gender2.AutoSize = true;
+            this.label_Gender2.BackColor = System.Drawing.Color.White;
+            this.label_Gender2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Gender2.ForeColor = System.Drawing.Color.Black;
+            this.label_Gender2.Location = new System.Drawing.Point(774, 248);
+            this.label_Gender2.Name = "label_Gender2";
+            this.label_Gender2.Size = new System.Drawing.Size(20, 16);
+            this.label_Gender2.TabIndex = 82;
+            this.label_Gender2.Text = "M";
+            // 
+            // label_Gender1
+            // 
+            this.label_Gender1.AutoSize = true;
+            this.label_Gender1.BackColor = System.Drawing.Color.White;
+            this.label_Gender1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Gender1.ForeColor = System.Drawing.Color.Black;
+            this.label_Gender1.Location = new System.Drawing.Point(774, 208);
+            this.label_Gender1.Name = "label_Gender1";
+            this.label_Gender1.Size = new System.Drawing.Size(20, 16);
+            this.label_Gender1.TabIndex = 81;
+            this.label_Gender1.Text = "M";
+            // 
+            // label_Age4
+            // 
+            this.label_Age4.AutoSize = true;
+            this.label_Age4.BackColor = System.Drawing.Color.White;
+            this.label_Age4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Age4.ForeColor = System.Drawing.Color.Black;
+            this.label_Age4.Location = new System.Drawing.Point(736, 319);
+            this.label_Age4.Name = "label_Age4";
+            this.label_Age4.Size = new System.Drawing.Size(32, 16);
+            this.label_Age4.TabIndex = 80;
+            this.label_Age4.Text = "000";
+            // 
+            // label_Age3
+            // 
+            this.label_Age3.AutoSize = true;
+            this.label_Age3.BackColor = System.Drawing.Color.White;
+            this.label_Age3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Age3.ForeColor = System.Drawing.Color.Black;
+            this.label_Age3.Location = new System.Drawing.Point(736, 288);
+            this.label_Age3.Name = "label_Age3";
+            this.label_Age3.Size = new System.Drawing.Size(32, 16);
+            this.label_Age3.TabIndex = 79;
+            this.label_Age3.Text = "000";
+            // 
+            // label_Age2
+            // 
+            this.label_Age2.AutoSize = true;
+            this.label_Age2.BackColor = System.Drawing.Color.White;
+            this.label_Age2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Age2.ForeColor = System.Drawing.Color.Black;
+            this.label_Age2.Location = new System.Drawing.Point(736, 248);
+            this.label_Age2.Name = "label_Age2";
+            this.label_Age2.Size = new System.Drawing.Size(32, 16);
+            this.label_Age2.TabIndex = 78;
+            this.label_Age2.Text = "000";
+            // 
+            // label_Age1
+            // 
+            this.label_Age1.AutoSize = true;
+            this.label_Age1.BackColor = System.Drawing.Color.White;
+            this.label_Age1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Age1.ForeColor = System.Drawing.Color.Black;
+            this.label_Age1.Location = new System.Drawing.Point(736, 208);
+            this.label_Age1.Name = "label_Age1";
+            this.label_Age1.Size = new System.Drawing.Size(32, 16);
+            this.label_Age1.TabIndex = 77;
+            this.label_Age1.Text = "000";
+            // 
+            // label_Name4
+            // 
+            this.label_Name4.AutoSize = true;
+            this.label_Name4.BackColor = System.Drawing.Color.White;
+            this.label_Name4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Name4.ForeColor = System.Drawing.Color.Black;
+            this.label_Name4.Location = new System.Drawing.Point(526, 319);
+            this.label_Name4.Name = "label_Name4";
+            this.label_Name4.Size = new System.Drawing.Size(51, 16);
+            this.label_Name4.TabIndex = 76;
+            this.label_Name4.Text = "NAME";
+            // 
+            // label_Name3
+            // 
+            this.label_Name3.AutoSize = true;
+            this.label_Name3.BackColor = System.Drawing.Color.White;
+            this.label_Name3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Name3.ForeColor = System.Drawing.Color.Black;
+            this.label_Name3.Location = new System.Drawing.Point(526, 288);
+            this.label_Name3.Name = "label_Name3";
+            this.label_Name3.Size = new System.Drawing.Size(51, 16);
+            this.label_Name3.TabIndex = 75;
+            this.label_Name3.Text = "NAME";
+            // 
+            // label_Name2
+            // 
+            this.label_Name2.AutoSize = true;
+            this.label_Name2.BackColor = System.Drawing.Color.White;
+            this.label_Name2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Name2.ForeColor = System.Drawing.Color.Black;
+            this.label_Name2.Location = new System.Drawing.Point(526, 248);
+            this.label_Name2.Name = "label_Name2";
+            this.label_Name2.Size = new System.Drawing.Size(51, 16);
+            this.label_Name2.TabIndex = 74;
+            this.label_Name2.Text = "NAME";
+            // 
+            // label_Name1
+            // 
+            this.label_Name1.AutoSize = true;
+            this.label_Name1.BackColor = System.Drawing.Color.White;
+            this.label_Name1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Name1.ForeColor = System.Drawing.Color.Black;
+            this.label_Name1.Location = new System.Drawing.Point(526, 208);
+            this.label_Name1.Name = "label_Name1";
+            this.label_Name1.Size = new System.Drawing.Size(51, 16);
+            this.label_Name1.TabIndex = 73;
+            this.label_Name1.Text = "NAME";
+            this.label_Name1.Click += new System.EventHandler(this.label_Name1_Click);
+            // 
             // TicketPageBus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,6 +504,19 @@
             this.BackgroundImage = global::TicketBookingSystem.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label_Gender4);
+            this.Controls.Add(this.label_Gender3);
+            this.Controls.Add(this.label_Gender2);
+            this.Controls.Add(this.label_Gender1);
+            this.Controls.Add(this.label_Age4);
+            this.Controls.Add(this.label_Age3);
+            this.Controls.Add(this.label_Age2);
+            this.Controls.Add(this.label_Age1);
+            this.Controls.Add(this.label_Name4);
+            this.Controls.Add(this.label_Name3);
+            this.Controls.Add(this.label_Name2);
+            this.Controls.Add(this.label_Name1);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label_logout);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
@@ -359,20 +527,18 @@
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.label_TicketNo);
             this.Controls.Add(this.label_Price);
-            this.Controls.Add(this.label_Route);
             this.Controls.Add(this.label_Date);
             this.Controls.Add(this.label_Destination);
             this.Controls.Add(this.label_Source);
             this.Controls.Add(this.lbl_TicketNo);
             this.Controls.Add(this.lbl_Price);
-            this.Controls.Add(this.lbl_Route);
             this.Controls.Add(this.lbl_Date);
             this.Controls.Add(this.lbl_Arrive);
             this.Controls.Add(this.lbl_Depart);
             this.Controls.Add(this.button_CANCEL);
             this.Controls.Add(this.button_BOOK);
-            this.Controls.Add(this.pictureBox_Ticket);
             this.Controls.Add(this.Banner);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label_PREVIEW);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -382,8 +548,8 @@
             this.Load += new System.EventHandler(this.TicketPageBus_Load);
             ((System.ComponentModel.ISupportInitialize)(this.HomeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Ticket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Banner)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -396,19 +562,16 @@
         private System.Windows.Forms.PictureBox BackButton;
         private System.Windows.Forms.Label label_TicketNo;
         private System.Windows.Forms.Label label_Price;
-        private System.Windows.Forms.Label label_Route;
         private System.Windows.Forms.Label label_Date;
         private System.Windows.Forms.Label label_Destination;
         private System.Windows.Forms.Label label_Source;
         private System.Windows.Forms.Label lbl_TicketNo;
         private System.Windows.Forms.Label lbl_Price;
-        private System.Windows.Forms.Label lbl_Route;
         private System.Windows.Forms.Label lbl_Date;
         private System.Windows.Forms.Label lbl_Arrive;
         private System.Windows.Forms.Label lbl_Depart;
         private System.Windows.Forms.Button button_CANCEL;
         private System.Windows.Forms.Button button_BOOK;
-        private System.Windows.Forms.PictureBox pictureBox_Ticket;
         private System.Windows.Forms.PictureBox Banner;
         private System.Windows.Forms.Label label_PREVIEW;
         private System.Windows.Forms.Label label4;
@@ -416,5 +579,19 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label_logout;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label_Gender4;
+        private System.Windows.Forms.Label label_Gender3;
+        private System.Windows.Forms.Label label_Gender2;
+        private System.Windows.Forms.Label label_Gender1;
+        private System.Windows.Forms.Label label_Age4;
+        private System.Windows.Forms.Label label_Age3;
+        private System.Windows.Forms.Label label_Age2;
+        private System.Windows.Forms.Label label_Age1;
+        private System.Windows.Forms.Label label_Name4;
+        private System.Windows.Forms.Label label_Name3;
+        private System.Windows.Forms.Label label_Name2;
+        private System.Windows.Forms.Label label_Name1;
     }
 }

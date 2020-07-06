@@ -27,6 +27,12 @@ namespace TicketBookingSystem
         public int air_flag_source = 0;
         public int air_flag_destination = 0;
 
+        public static String mid { get; set; }
+        public int serial_source;
+        public int serial_destination;
+        public static int air_first;
+        
+
         public static int price = 0;
         public static int distance = 0;
         public static int ticketno = 0;
@@ -57,6 +63,8 @@ namespace TicketBookingSystem
                 String air_destination;
                 String distance_source;
                 String distance_destination;
+                String SerialSource;
+                String SerialDestination;
 
                 // Source
                 // Create Sql Query 
@@ -64,19 +72,35 @@ namespace TicketBookingSystem
                 train_source = "SELECT Train FROM tbl_stations WHERE StationName = @source";
                 air_source = "SELECT Airplane FROM tbl_stations WHERE StationName = @source";
                 distance_source = "SELECT DistanceFromFirstStation FROM tbl_stations WHERE StationName = @source";
-                
+                SerialSource = "SELECT StationNo FROM tbl_stations WHERE StationName = @source";
+
                 SqlCommand bus_cmd_source = new SqlCommand(bus_source, conn);
                 SqlCommand train_cmd_source = new SqlCommand(train_source, conn);
                 SqlCommand air_cmd_source = new SqlCommand(air_source, conn);
                 SqlCommand distance_cmd_source = new SqlCommand(distance_source, conn);
+                SqlCommand serial_cmd_source = new SqlCommand(SerialSource, conn);
 
                 bus_cmd_source.Parameters.AddWithValue("@source", TicketClass.source);
                 train_cmd_source.Parameters.AddWithValue("@source", TicketClass.source);
                 air_cmd_source.Parameters.AddWithValue("@source", TicketClass.source);
                 distance_cmd_source.Parameters.AddWithValue("@source", TicketClass.source);
+                serial_cmd_source.Parameters.AddWithValue("@source", TicketClass.source);
 
                 SqlDataReader reader = null;
 
+                conn.Open();
+                reader = serial_cmd_source.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        // this is how record is read. Loop through the each record
+                        serial_source = reader.GetInt32(0);
+                    }
+                }
+                conn.Close();
+
+                reader = null;
                 // Open Connecction
                 conn.Open();
                 // Read the database for flag of bus, train & air
@@ -91,6 +115,7 @@ namespace TicketBookingSystem
                 }
                 conn.Close();
 
+                reader = null;
                 // Open Connecction
                 conn.Open();
                 // Read the database for flag of bus, train & air
@@ -105,6 +130,7 @@ namespace TicketBookingSystem
                 }
                 conn.Close();
 
+                reader = null;
                 conn.Open();
                 reader = train_cmd_source.ExecuteReader();
                 if (reader.HasRows)
@@ -116,6 +142,8 @@ namespace TicketBookingSystem
                     }
                 }
                 conn.Close();
+                
+                reader = null;
                 conn.Open();
                 reader = air_cmd_source.ExecuteReader();
                 if (reader.HasRows)
@@ -135,19 +163,34 @@ namespace TicketBookingSystem
                 train_destination = "SELECT Train FROM tbl_stations WHERE StationName = @destination";
                 air_destination = "SELECT Airplane FROM tbl_stations WHERE StationName = @destination";
                 distance_destination = "SELECT DistanceFromFirstStation FROM tbl_stations WHERE StationName = @destination";
+                SerialDestination = "SELECT StationNo FROM tbl_stations WHERE StationName = @destination";
 
 
                 SqlCommand bus_cmd_destination = new SqlCommand(bus_destination, conn);
                 SqlCommand train_cmd_destination = new SqlCommand(train_destination, conn);
                 SqlCommand air_cmd_destination = new SqlCommand(air_destination, conn);
                 SqlCommand distance_cmd_destination = new SqlCommand(distance_destination, conn);
+                SqlCommand serial_cmd_destination = new SqlCommand(SerialDestination, conn);
 
                 bus_cmd_destination.Parameters.AddWithValue("@destination", TicketClass.destination);
                 train_cmd_destination.Parameters.AddWithValue("@destination", TicketClass.destination);
                 air_cmd_destination.Parameters.AddWithValue("@destination", TicketClass.destination);
                 distance_cmd_destination.Parameters.AddWithValue("@destination", TicketClass.destination);
+                serial_cmd_destination.Parameters.AddWithValue("@destination", TicketClass.destination);
 
+                conn.Open();
+                reader = serial_cmd_destination.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        // this is how record is read. Loop through the each record
+                        serial_destination = reader.GetInt32(0);
+                    }
+                }
+                conn.Close();
 
+                reader = null;
                 // Open Connecction
                 conn.Open();
                 // Read the database for flag of bus, train & air
@@ -162,6 +205,7 @@ namespace TicketBookingSystem
                 }
                 conn.Close();
 
+                reader = null;
                 // Open Connecction
                 conn.Open();
                 // Read the database for flag of bus, train & air
@@ -175,6 +219,8 @@ namespace TicketBookingSystem
                     }
                 }
                 conn.Close();
+                
+                reader = null;
                 conn.Open();
                 reader = train_cmd_destination.ExecuteReader();
                 if (reader.HasRows)
@@ -186,6 +232,8 @@ namespace TicketBookingSystem
                     }
                 }
                 conn.Close();
+                
+                reader = null;
                 conn.Open();
                 reader = air_cmd_destination.ExecuteReader();
                 if (reader.HasRows)
@@ -211,6 +259,92 @@ namespace TicketBookingSystem
                 conn.Close();
             }
             return isSuccess;
+        }
+
+        // Emergency calculation
+        public void Emergency_calculation()
+        {
+            String[] array = new String[100];
+            int i = 0;
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            try
+            {
+                if (air_flag_source == 1)
+                {
+                    air_first = 1;
+                    String sql;
+                    if (serial_destination > serial_source)
+                    {
+                        sql = "SELECT StationName FROM tbl_stations WHERE Airplane = 1 AND StationNo > @serial_source AND StationNo < @serial_destination ORDER BY StationNo;";
+                    }
+                    else if (serial_source > serial_destination)
+                    {
+                        sql = "SELECT StationName FROM tbl_stations WHERE Airplane = 1 AND StationNo > @serial_destination AND StationNo < @serial_source ORDER BY StationNo desc;";
+                    }
+                    else
+                    {
+                        sql = "";
+                    }
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@serial_source", serial_source);
+                    cmd.Parameters.AddWithValue("@serial_destination", serial_destination);
+
+                    SqlDataReader reader = null;
+                    conn.Open();
+                    reader = cmd.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            array[i] = reader.GetString(0);
+                        }
+                        mid = array[0];
+                    }
+                    
+                }
+                else if (air_flag_destination == 1)
+                {
+                    air_first = 0;
+                    String sql;
+                    if (serial_destination > serial_source)
+                    {
+                        sql = "SELECT StationName FROM tbl_stations WHERE Airplane = 1 AND StationNo > @serial_source AND StationNo < @serial_destination ORDER BY StationNo desc;";
+                    }
+                    else if (serial_source > serial_destination)
+                    {
+                        sql = "SELECT StationName FROM tbl_stations WHERE Airplane = 1 AND StationNo > @serial_destination AND StationNo < @serial_source ORDER BY StationNo;";
+                    }
+                    else
+                    {
+                        sql = "";
+                    }
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@serial_source", serial_source);
+                    cmd.Parameters.AddWithValue("@serial_destination", serial_destination);
+
+                    SqlDataReader reader = null;
+                    conn.Open();
+                    reader = cmd.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            array[i] = reader.GetString(0);
+                        }
+                        mid = array[0];
+                    }
+                    
+                }
+
+            }
+            catch(Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         // ticket number from database

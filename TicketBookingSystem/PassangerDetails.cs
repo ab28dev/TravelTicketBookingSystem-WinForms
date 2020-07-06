@@ -19,6 +19,23 @@ namespace TicketBookingSystem
         public static String str_mode { get; set; }
         public static int no_of_passangers = 1;
 
+        public static String Name1;
+        public static String Name2;
+        public static String Name3;
+        public static String Name4;
+
+        public static int Age1;
+        public static int Age2;
+        public static int Age3;
+        public static int Age4;
+
+        public static char Gender1;
+        public static char Gender2;
+        public static char Gender3;
+        public static char Gender4;
+
+
+
         TicketClass c = new TicketClass();
         private void BackButton_Click(object sender, EventArgs e)
         {
@@ -143,31 +160,114 @@ namespace TicketBookingSystem
             }
             else if (flag == 1)
             {
-                if (TicketClass.mode == "AIR")
                 {
-                    TicketPageAirplane ticketPageAirplane = new TicketPageAirplane();
-                    ticketPageAirplane.Show();
-                    this.Hide();
+                    if (no_of_passangers > 0 && no_of_passangers < 5)
+                    {
+                        Name1 = textBox_p1_name.Text;
+                        Age1 = int.Parse(textBox_p1_age.Text);
+                        if (comboBox_p1_gender.Text == "Male")
+                        {
+                            Gender1 = 'M';
+                        }
+                        else if (comboBox_p1_gender.Text == "Female")
+                        {
+                            Gender1 = 'F';
+                        }
+                        else if (comboBox_p1_gender.Text == "Others")
+                        {
+                            Gender1 = 'O';
+                        }
+                    }
+
+
+                    if (no_of_passangers > 1 && no_of_passangers < 5)
+                    {
+                        Name2 = textBox_p2_name.Text;
+                        Age2 = int.Parse(textBox_p2_age.Text);
+                        if (comboBox_p2_gender.Text == "Male")
+                        {
+                            Gender2 = 'M';
+                        }
+                        else if (comboBox_p2_gender.Text == "Female")
+                        {
+                            Gender2 = 'F';
+                        }
+                        else if (comboBox_p2_gender.Text == "Others")
+                        {
+                            Gender2 = 'O';
+                        }
+
+                    }
+
+                    if (no_of_passangers > 2 && no_of_passangers < 5)
+                    {
+                        Name3 = textBox_p3_name.Text;
+                        Age3 = int.Parse(textBox_p3_age.Text);
+                        if (comboBox_p3_gender.Text == "Male")
+                        {
+                            Gender3 = 'M';
+                        }
+                        else if (comboBox_p3_gender.Text == "Female")
+                        {
+                            Gender3 = 'F';
+                        }
+                        else if (comboBox_p3_gender.Text == "Others")
+                        {
+                            Gender3 = 'O';
+                        }
+
+                    }
+
+                    if (no_of_passangers > 3 && no_of_passangers < 5)
+                    {
+                        Name4 = textBox_p4_name.Text;
+                        Age4 = int.Parse(textBox_p4_age.Text);
+                        if (comboBox_p4_gender.Text == "Male")
+                        {
+                            Gender4 = 'M';
+                        }
+                        else if (comboBox_p4_gender.Text == "Female")
+                        {
+                            Gender4 = 'F';
+                        }
+                        else if (comboBox_p4_gender.Text == "Others")
+                        {
+                            Gender4 = 'O';
+                        }
+
+                    }
                 }
-                else if (TicketClass.mode == "BUS")
+
                 {
-                    TicketPageBus ticketPageBus = new TicketPageBus();
-                    ticketPageBus.Show();
-                    this.Hide();
-                }
-                else if (TicketClass.mode == "TRAIN")
-                {
-                    TicketPageTrain ticketPageTrain = new TicketPageTrain();
-                    ticketPageTrain.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    TicketPageEmergency ticketPageEmergency = new TicketPageEmergency();
-                    ticketPageEmergency.Show();
-                    this.Hide();
+
+                    if (TicketClass.mode == "AIR")
+                    {
+                        TicketPageAirplane ticketPageAirplane = new TicketPageAirplane();
+                        ticketPageAirplane.Show();
+                        this.Hide();
+                    }
+                    else if (TicketClass.mode == "BUS")
+                    {
+                        TicketPageBus ticketPageBus = new TicketPageBus();
+                        ticketPageBus.Show();
+                        this.Hide();
+                    }
+                    else if (TicketClass.mode == "TRAIN")
+                    {
+                        TicketPageTrain ticketPageTrain = new TicketPageTrain();
+                        ticketPageTrain.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        TicketPageEmergency ticketPageEmergency = new TicketPageEmergency();
+                        ticketPageEmergency.Show();
+                        this.Hide();
+                    }
                 }
             }
+
+            
         }
 
         private void textBox_p1_age_KeyPress(object sender, KeyPressEventArgs e)
@@ -417,6 +517,11 @@ namespace TicketBookingSystem
             Welcome welcome = new Welcome();
             welcome.Show();
             this.Hide();
+        }
+
+        private void textBox_p1_age_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -22,6 +22,10 @@ namespace TicketBookingSystem
         TicketClass c = new TicketClass();
         public static String date;
 
+        public static int bus_available_flag = 0;
+        public static int train_available_flag = 0;
+        public static int air_available_flag = 0;
+
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -58,9 +62,7 @@ namespace TicketBookingSystem
 
         private void button_Search_Click(object sender, EventArgs e)
         {
-            int bus_available_flag = 0;
-            int train_available_flag = 0;
-            int air_available_flag = 0;
+            
 
             // proceeds if inputs not empty
             if(comboBox_Source.Text == "" || comboBox_Destination.Text == "")
@@ -114,9 +116,12 @@ namespace TicketBookingSystem
                         }
                         else
                         {
-                            // Emergency Option to be added here
-                            button_EMERGENCY.Visible = true;
-                            button_EMERGENCY.Enabled = true;
+                            if (c.air_flag_source == 1 || c.air_flag_destination == 1)
+                            {
+                                // Emergency Option to be added here
+                                button_EMERGENCY.Visible = true;
+                                button_EMERGENCY.Enabled = true;
+                            }
                         }
 
                         if (bus_available_flag == 0 && train_available_flag == 0 && air_available_flag == 0)
@@ -200,6 +205,7 @@ namespace TicketBookingSystem
         {
             TicketClass.mode = "EMERGENCY";
             c.fetch_price(c, "EMERGENCY");
+            c.Emergency_calculation();
             PassangerDetails passanger = new PassangerDetails();
             passanger.Show();
             this.Hide();

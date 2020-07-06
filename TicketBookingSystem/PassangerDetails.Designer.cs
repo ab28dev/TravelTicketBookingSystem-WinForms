@@ -402,6 +402,7 @@
             this.textBox_p1_age.Name = "textBox_p1_age";
             this.textBox_p1_age.Size = new System.Drawing.Size(78, 36);
             this.textBox_p1_age.TabIndex = 34;
+            this.textBox_p1_age.TextChanged += new System.EventHandler(this.textBox_p1_age_TextChanged);
             this.textBox_p1_age.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_p1_age_KeyPress);
             // 
             // textBox_p4_name

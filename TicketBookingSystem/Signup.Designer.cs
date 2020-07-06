@@ -231,6 +231,7 @@
             this.textBox_password.Name = "textBox_password";
             this.textBox_password.Size = new System.Drawing.Size(212, 31);
             this.textBox_password.TabIndex = 67;
+            this.textBox_password.UseSystemPasswordChar = true;
             // 
             // textBox_confirm_password
             // 
@@ -239,6 +240,7 @@
             this.textBox_confirm_password.Name = "textBox_confirm_password";
             this.textBox_confirm_password.Size = new System.Drawing.Size(212, 31);
             this.textBox_confirm_password.TabIndex = 68;
+            this.textBox_confirm_password.UseSystemPasswordChar = true;
             // 
             // textBox_name
             // 
@@ -263,6 +265,7 @@
             this.textBox_age.Name = "textBox_age";
             this.textBox_age.Size = new System.Drawing.Size(168, 31);
             this.textBox_age.TabIndex = 71;
+            this.textBox_age.TextChanged += new System.EventHandler(this.textBox_age_TextChanged);
             this.textBox_age.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPress);
             // 
             // textBox_state
