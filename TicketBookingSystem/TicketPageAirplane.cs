@@ -116,11 +116,18 @@ namespace TicketBookingSystem
             ticketClass.add_ticket(ticketClass, PassangerDetails.str_mode);
 
             HomePage homepage = new HomePage();
-            
-            MessageBox.Show("Your Ticket has been booked successfully.");
-            
-            homepage.Show();
-            this.Hide();
+            bool success = false;
+            success = ticketClass.add_passangers();
+            if(success == true)
+            {
+                MessageBox.Show("Your Ticket has been booked successfully.");
+                homepage.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Error in booking ticket. Try again !!!");
+            }
         }
 
         private void button_CANCEL_Click(object sender, EventArgs e)

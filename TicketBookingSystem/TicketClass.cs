@@ -469,7 +469,7 @@ namespace TicketBookingSystem
             try
             {
                 String sql;
-                sql = "INSERT INTO ticket_history (Source, Destination, Date, Mode, Fare, Distance, UserID) VALUES (@Source, @Destination, @date, @Mode, @Fare, @Distance, @UserID)";
+                sql = "INSERT INTO ticket_history (Source, Destination, Date, Mode, Fare, Distance, UserID, PassangerCount) VALUES (@Source, @Destination, @date, @Mode, @Fare, @Distance, @UserID, @PCount)";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@Source", source);
@@ -479,6 +479,7 @@ namespace TicketBookingSystem
                 cmd.Parameters.AddWithValue("@Fare", price);
                 cmd.Parameters.AddWithValue("@Distance", distance);
                 cmd.Parameters.AddWithValue("@UserID", user_id);
+                cmd.Parameters.AddWithValue("@PCOunt", PassangerDetails.no_of_passangers);
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
                 //if the query runs successfully then the value of rows will be greater than zero else it will be zero
@@ -600,6 +601,110 @@ namespace TicketBookingSystem
             return issuccess;
         }
 
+        public bool add_passangers()
+        {
+            bool issuccess = false;
+            String sql;
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            try
+            {
+                if (PassangerDetails.no_of_passangers > 0 && PassangerDetails.no_of_passangers < 5)
+                {
+                    sql = "INSERT INTO passanger_details (TicketNo, Name, Age, Gender) VALUES (@TicketNo, @Name, @Age, @Gender)";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@TicketNo", ticketno);
+                    cmd.Parameters.AddWithValue("@Name", PassangerDetails.Name1);
+                    cmd.Parameters.AddWithValue("@Age", PassangerDetails.Age1);
+                    cmd.Parameters.AddWithValue("@Gender", PassangerDetails.Gender1);
+                    conn.Open();
+                    int rows = cmd.ExecuteNonQuery();
+                    if(rows > 0)
+                    {
+                        issuccess = true;
+                    }
+                    else
+                    {
+                        issuccess = false;
+                    }
+                    conn.Close();
+                }
+
+                if (PassangerDetails.no_of_passangers > 1 && PassangerDetails.no_of_passangers < 5)
+                {
+                    sql = "INSERT INTO passanger_details (TicketNo, Name, Age, Gender) VALUES (@TicketNo, @Name, @Age, @Gender)";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@TicketNo", ticketno);
+                    cmd.Parameters.AddWithValue("@Name", PassangerDetails.Name2);
+                    cmd.Parameters.AddWithValue("@Age", PassangerDetails.Age2);
+                    cmd.Parameters.AddWithValue("@Gender", PassangerDetails.Gender2);
+                    conn.Open();
+                    int rows = cmd.ExecuteNonQuery();
+                    if (rows > 0)
+                    {
+                        issuccess = true;
+                    }
+                    else
+                    {
+                        issuccess = false;
+                    }
+                    conn.Close();
+                }
+
+                if (PassangerDetails.no_of_passangers > 2 && PassangerDetails.no_of_passangers < 5)
+                {
+                    sql = "INSERT INTO passanger_details (TicketNo, Name, Age, Gender) VALUES (@TicketNo, @Name, @Age, @Gender)";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@TicketNo", ticketno);
+                    cmd.Parameters.AddWithValue("@Name", PassangerDetails.Name3);
+                    cmd.Parameters.AddWithValue("@Age", PassangerDetails.Age3);
+                    cmd.Parameters.AddWithValue("@Gender", PassangerDetails.Gender3);
+                    conn.Open();
+                    int rows = cmd.ExecuteNonQuery();
+                    if (rows > 0)
+                    {
+                        issuccess = true;
+                    }
+                    else
+                    {
+                        issuccess = false;
+                    }
+                    conn.Close();
+                }
+
+                if (PassangerDetails.no_of_passangers > 3 && PassangerDetails.no_of_passangers < 5)
+                {
+                    sql = "INSERT INTO passanger_details (TicketNo, Name, Age, Gender) VALUES (@TicketNo, @Name, @Age, @Gender)";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@TicketNo", ticketno);
+                    cmd.Parameters.AddWithValue("@Name", PassangerDetails.Name4);
+                    cmd.Parameters.AddWithValue("@Age", PassangerDetails.Age4);
+                    cmd.Parameters.AddWithValue("@Gender", PassangerDetails.Gender4);
+                    conn.Open();
+                    int rows = cmd.ExecuteNonQuery();
+                    if (rows > 0)
+                    {
+                        issuccess = true;
+                    }
+                    else
+                    {
+                        issuccess = false;
+                    }
+                    conn.Close();
+                }
+                conn.Open();
+            }
+            catch(Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return issuccess;
+        }
 
     }
 }
