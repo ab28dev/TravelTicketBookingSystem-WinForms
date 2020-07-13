@@ -116,7 +116,9 @@ namespace TicketBookingSystem
             ticketClass.add_ticket(ticketClass, PassangerDetails.str_mode);
 
             HomePage homepage = new HomePage();
+            
             MessageBox.Show("Your Ticket has been booked successfully.");
+            
             homepage.Show();
             this.Hide();
         }
