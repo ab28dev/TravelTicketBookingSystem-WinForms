@@ -53,8 +53,8 @@ namespace TicketBookingSystem
                 success = c.login_check_admin();
                 if (success == true)
                 {
-                    HomePage homePage = new HomePage();
-                    homePage.Show();
+                    AdminHomepage adminHomepage = new AdminHomepage();
+                    adminHomepage.Show();
                     this.Hide();
                 }
                 else

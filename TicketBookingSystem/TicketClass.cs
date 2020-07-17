@@ -37,6 +37,15 @@ namespace TicketBookingSystem
         public static int distance = 0;
         public static int ticketno = 0;
 
+        public static int today = 0;
+        public static int this_month = 0;
+        public static int this_year = 0;
+        public static int total = 0;
+
+        public static DateTime DateFrom;
+        public static DateTime DateTo;
+
+
         static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
         
       
@@ -469,7 +478,7 @@ namespace TicketBookingSystem
             try
             {
                 String sql;
-                sql = "INSERT INTO ticket_history (Source, Destination, Date, Mode, Fare, Distance, UserID, PassangerCount) VALUES (@Source, @Destination, @date, @Mode, @Fare, @Distance, @UserID, @PCount)";
+                sql = "INSERT INTO ticket_history (Source, Destination, Date, Mode, Fare, Distance, UserID, PassangerCount, BookedOn) VALUES (@Source, @Destination, @date, @Mode, @Fare, @Distance, @UserID, @PCount, @BookedOn)";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@Source", source);
@@ -480,6 +489,8 @@ namespace TicketBookingSystem
                 cmd.Parameters.AddWithValue("@Distance", distance);
                 cmd.Parameters.AddWithValue("@UserID", user_id);
                 cmd.Parameters.AddWithValue("@PCOunt", PassangerDetails.no_of_passangers);
+                cmd.Parameters.AddWithValue("@BookedOn", DateTime.Now);
+
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
                 //if the query runs successfully then the value of rows will be greater than zero else it will be zero
@@ -507,28 +518,126 @@ namespace TicketBookingSystem
 
         public DataTable Select()
         {
+            String flag = AdminHomepage.flag;
             //step 1: Database connection
             SqlConnection conn = new SqlConnection(myconnstrng);
             DataTable dt = new DataTable();
-            try
+            if (flag == "today")
             {
-                //step 2: writing sql query
-                string sql = "SELECT TicketNo, Source, Destination, Date AS 'Date of Journey', Mode, Fare, Distance AS 'Distance(KM)' FROM ticket_history";
-                // creating cmd using sql and conn
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                // Creating sql DataAdapter using cmd
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                conn.Open();
-                adapter.Fill(dt);
+                try
+                {
+
+                    String sql = "SELECT TicketNo, Source, Destination, Date AS 'Date of Journey', Mode, Fare, Distance AS 'Distance(KM)', BookedOn AS 'Date of Booking' FROM ticket_history WHERE BookedOn = CONVERT(char(8), @Date, 112) ORDER BY TicketNo desc";
+                    // creating cmd using sql and conn
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@Date", DateTime.Now);
+                    // Creating sql DataAdapter using cmd
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    conn.Open();
+                    adapter.Fill(dt);
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
             }
-            catch (Exception Ex)
+            else if (flag == "month")
             {
-                MessageBox.Show(Ex.Message);
+                try
+                {
+
+                    String sql = "SELECT TicketNo, Source, Destination, Date AS 'Date of Journey', Mode, Fare, Distance AS 'Distance(KM)', BookedOn AS 'Date of Booking' FROM ticket_history WHERE MONTH(BookedOn) = MONTH(CONVERT(char(8), @Date, 112)) AND YEAR(BookedOn) = YEAR(CONVERT(char(8), @Date, 112)) ORDER BY TicketNo desc";
+                    // creating cmd using sql and conn
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@Date", DateTime.Now);
+                    // Creating sql DataAdapter using cmd
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    conn.Open();
+                    adapter.Fill(dt);
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
             }
-            finally
+            else if (flag == "year")
             {
-                conn.Close();
+                try
+                {
+
+                    String sql = "SELECT TicketNo, Source, Destination, Date AS 'Date of Journey', Mode, Fare, Distance AS 'Distance(KM)', BookedOn AS 'Date of Booking' FROM ticket_history WHERE YEAR(BookedOn) = YEAR(CONVERT(char(8), @Date, 112)) ORDER BY TicketNo desc";
+                    // creating cmd using sql and conn
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@Date", DateTime.Now);
+                    // Creating sql DataAdapter using cmd
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    conn.Open();
+                    adapter.Fill(dt);
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
             }
+            else if (flag == "all")
+            {
+                try
+                {
+
+                    String sql = "SELECT TicketNo, Source, Destination, Date AS 'Date of Journey', Mode, Fare, Distance AS 'Distance(KM)', BookedOn AS 'Date of Booking' FROM ticket_history ORDER BY TicketNo desc";
+                    // creating cmd using sql and conn
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    // Creating sql DataAdapter using cmd
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    conn.Open();
+                    adapter.Fill(dt);
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+            else if (flag == "custom")
+            {
+                try
+                {
+
+                    String sql = "SELECT TicketNo, Source, Destination, Date AS 'Date of Journey', Mode, Fare, Distance AS 'Distance(KM)', BookedOn AS 'Date of Booking' FROM ticket_history WHERE BookedOn >= @DateFrom AND BookedOn <= @DateTo ORDER BY TicketNo desc";
+                    // creating cmd using sql and conn
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@DateFrom", DateFrom);
+                    cmd.Parameters.AddWithValue("@DateTo", DateTo);
+                    // Creating sql DataAdapter using cmd
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    conn.Open();
+                    adapter.Fill(dt);
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+
             return dt;
         }
 
@@ -704,6 +813,86 @@ namespace TicketBookingSystem
             }
 
             return issuccess;
+        }
+
+        public void ticket_stats()
+        {
+            String sql;
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            try
+            {
+
+                sql = "SELECT COUNT(TicketNo) FROM ticket_history WHERE BookedOn = CONVERT(char(8), @Date, 112)";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@Date", DateTime.Now);
+                conn.Open();
+                SqlDataReader reader = null;
+                reader = cmd.ExecuteReader();
+                if(reader.HasRows)
+                {
+                    while(reader.Read())
+                    {
+                        today = reader.GetInt32(0);
+                    }
+                }
+                conn.Close();
+
+
+                sql = "SELECT COUNT(TicketNo) FROM ticket_history WHERE MONTH(BookedOn) = MONTH(CONVERT(char(8), @Date, 112)) AND YEAR(BookedOn) = YEAR(CONVERT(char(8), @Date, 112))";
+                SqlCommand cmd2 = new SqlCommand(sql, conn);
+                cmd2.Parameters.AddWithValue("@Date", DateTime.Now);
+                conn.Open();
+                reader = null;
+                reader = cmd2.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        this_month = reader.GetInt32(0);
+                    }
+                }
+                conn.Close();
+
+
+                sql = "SELECT COUNT(TicketNo) FROM ticket_history WHERE YEAR(BookedOn) = YEAR(CONVERT(char(8), @Date, 112))";
+                SqlCommand cmd3 = new SqlCommand(sql, conn);
+                cmd3.Parameters.AddWithValue("@Date", DateTime.Now);
+                conn.Open();
+                reader = null;
+                reader = cmd3.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        this_year = reader.GetInt32(0);
+                    }
+                }
+                conn.Close();
+
+                sql = "SELECT COUNT(TicketNo) FROM ticket_history";
+                SqlCommand cmd4 = new SqlCommand(sql, conn);
+                cmd4.Parameters.AddWithValue("@Date", DateTime.Now);
+                conn.Open();
+                reader = null;
+                reader = cmd4.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        total = reader.GetInt32(0);
+                    }
+                }
+                conn.Close();
+
+            }
+            catch(Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
     }

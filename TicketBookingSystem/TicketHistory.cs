@@ -19,16 +19,12 @@ namespace TicketBookingSystem
         
         TicketClass c = new TicketClass();
 
-        private void button_CANCEL_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-
-        }
-
+        public static String flag;
+        
         private void HomeButton_Click(object sender, EventArgs e)
         {
-            HomePage homePage = new HomePage();
-            homePage.Show();
+            AdminHomepage adminHomepage = new AdminHomepage();
+            adminHomepage.Show();
             this.Hide();
         }
 
@@ -39,18 +35,22 @@ namespace TicketBookingSystem
             this.Hide();
         }
 
-        private void button_BOOK_Click(object sender, EventArgs e)
+        void display()
         {
             // Load data on data grid view
             DataTable dt = c.Select();
             dataGridView1.DataSource = dt;
         }
 
+        private void button_BOOK_Click(object sender, EventArgs e)
+        {
+            display();
+        }
+
         private void TicketHistory_Load(object sender, EventArgs e)
         {
-            // Load data on data grid view
-            DataTable dt = c.Select();
-            dataGridView1.DataSource = dt;
+            flag = AdminHomepage.flag;
+            display();
         }
 
         private void label1_Click(object sender, EventArgs e)

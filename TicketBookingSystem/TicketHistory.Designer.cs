@@ -32,8 +32,7 @@
             this.Banner = new System.Windows.Forms.PictureBox();
             this.HomeButton = new System.Windows.Forms.PictureBox();
             this.BackButton = new System.Windows.Forms.PictureBox();
-            this.button_CANCEL = new System.Windows.Forms.Button();
-            this.button_BOOK = new System.Windows.Forms.Button();
+            this.button_Refresh = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label_logout = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Banner)).BeginInit();
@@ -74,33 +73,19 @@
             this.BackButton.TabStop = false;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
-            // button_CANCEL
+            // button_Refresh
             // 
-            this.button_CANCEL.BackColor = System.Drawing.Color.DarkCyan;
-            this.button_CANCEL.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_CANCEL.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_CANCEL.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button_CANCEL.Location = new System.Drawing.Point(459, 401);
-            this.button_CANCEL.Name = "button_CANCEL";
-            this.button_CANCEL.Size = new System.Drawing.Size(161, 43);
-            this.button_CANCEL.TabIndex = 44;
-            this.button_CANCEL.Text = "CANCEL";
-            this.button_CANCEL.UseVisualStyleBackColor = false;
-            this.button_CANCEL.Click += new System.EventHandler(this.button_CANCEL_Click);
-            // 
-            // button_BOOK
-            // 
-            this.button_BOOK.BackColor = System.Drawing.Color.DarkCyan;
-            this.button_BOOK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_BOOK.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_BOOK.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button_BOOK.Location = new System.Drawing.Point(199, 401);
-            this.button_BOOK.Name = "button_BOOK";
-            this.button_BOOK.Size = new System.Drawing.Size(161, 43);
-            this.button_BOOK.TabIndex = 43;
-            this.button_BOOK.Text = "Refresh";
-            this.button_BOOK.UseVisualStyleBackColor = false;
-            this.button_BOOK.Click += new System.EventHandler(this.button_BOOK_Click);
+            this.button_Refresh.BackColor = System.Drawing.Color.DarkCyan;
+            this.button_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_Refresh.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Refresh.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button_Refresh.Location = new System.Drawing.Point(309, 398);
+            this.button_Refresh.Name = "button_Refresh";
+            this.button_Refresh.Size = new System.Drawing.Size(161, 43);
+            this.button_Refresh.TabIndex = 43;
+            this.button_Refresh.Text = "Refresh";
+            this.button_Refresh.UseVisualStyleBackColor = false;
+            this.button_Refresh.Click += new System.EventHandler(this.button_BOOK_Click);
             // 
             // dataGridView1
             // 
@@ -141,8 +126,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.HomeButton);
             this.Controls.Add(this.BackButton);
-            this.Controls.Add(this.button_CANCEL);
-            this.Controls.Add(this.button_BOOK);
+            this.Controls.Add(this.button_Refresh);
             this.Controls.Add(this.Banner);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -164,8 +148,7 @@
         private System.Windows.Forms.PictureBox Banner;
         private System.Windows.Forms.PictureBox HomeButton;
         private System.Windows.Forms.PictureBox BackButton;
-        private System.Windows.Forms.Button button_CANCEL;
-        private System.Windows.Forms.Button button_BOOK;
+        private System.Windows.Forms.Button button_Refresh;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label_logout;
     }
